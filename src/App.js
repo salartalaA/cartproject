@@ -14,7 +14,7 @@ function App() {
       <Provider store={store}>
         <Header />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/cartproject" element={<Home />} />
           <Route path="/products" element={<Products />} />
           <Route path="/products/:id" element={<ShowProduct />} />
           <Route path="/cart" element={<ShoppingCart />} />

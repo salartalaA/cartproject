@@ -17,16 +17,16 @@ const ProductCard = ({ src, price, description }) => (
       <img className="rounded-xl cursor-pointer" src={src} alt={description} />
     </div>
     <div className="m-2">
-      <span className="text-blue-600">{price}</span> تومان
+      <span className="main-text">{price}</span> تومان
       <div>{description}</div>
-      <div className="flex space-x-6 space-x-reverse mx-2">
-        <div className="cursor-pointer">
+      <div className="flex space-x-6 space-x-reverse mx-2 lg:mt-8">
+        <div className="cursor-pointer border-2 border-black w-8 h-8 text-center rounded-full">
           <FontAwesomeIcon icon={faCartShopping} />
         </div>
-        <div className="cursor-pointer">
+        <div className="cursor-pointer border-2 border-black w-8 h-8 text-center rounded-full">
           <FontAwesomeIcon icon={faArrowsLeftRight} />
         </div>
-        <div className="cursor-pointer">
+        <div className="cursor-pointer border-2 border-black w-8 h-8 text-center rounded-full">
           <FontAwesomeIcon icon={faHeart} />
         </div>
       </div>
@@ -35,11 +35,11 @@ const ProductCard = ({ src, price, description }) => (
 );
 
 const BlogCard = ({ src, title }) => (
-  <div className="w-72 h-72 bg-slate-100 m-4 rounded-xl flex-shrink-0">
-    <div className="p-4 bg-green-600 w-fit text-white rounded-b-xl rounded-tr-xl">
+  <div className="w-72 h-80 bg-slate-100 m-4 rounded-xl flex-shrink-0">
+    <div className="p-2 text-xs m-2 float-left main-bg w-fit text-white rounded-b-xl rounded-tr-xl">
       وبلاگ
     </div>
-    <div className="w-52 m-auto cursor-pointer">
+    <div className="w-full cursor-pointer my-10 mx-4">
       <img src={src} alt={title} />
     </div>
     <div className="m-6">{title}</div>
@@ -57,7 +57,7 @@ const NewProductCard = ({ src, price, description }) => (
     <div className="m-4">
       {description}
       <div className="my-2">
-        <span className="text-blue-600">{price}</span> تومان
+        <span className="main-text text-sm">{price}</span> تومان
       </div>
     </div>
   </div>
@@ -88,17 +88,17 @@ const Home = () => {
         </div>
         <div className="my-12">
           <div className="mt-3 mx-4">
-            اسباب قهوه
+            آسیاب قهوه
             <div className="bg-black h-1 max-w-96 my-4"></div>
           </div>
           <div className="text-sm mx-4">
-            <div className="flex lg:flex-nowrap lg:space-x-4 lg:space-x-reverse flex-wrap justify-center lg:justify-normal gap-4 overflow-x-auto flex-shrink-0">
+            <div className="flex lg:flex-nowrap lg:space-x-4 lg:space-x-reverse flex-wrap justify-center lg:justify-normal gap-4 flex-shrink-0">
               {[...Array(5)].map((_, index) => (
                 <ProductCard
                   key={index}
                   src={productSrc}
                   price="1000000"
-                  description="اسباب یونیک لایف A 900"
+                  description="آسیاب یونیک لایف A 900"
                 />
               ))}
             </div>
@@ -114,7 +114,7 @@ const Home = () => {
           جدیدترین محصولات
           <div className="bg-black h-1 max-w-96 my-4"></div>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mx-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mx-4 text-xs font-bold">
           {[...Array(6)].map((_, index) => (
             <NewProductCard
               key={index}

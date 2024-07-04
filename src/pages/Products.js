@@ -8,6 +8,7 @@ import {
   faCartShopping,
   faHeart,
   faStar,
+  faStore,
 } from "@fortawesome/free-solid-svg-icons";
 
 const Products = () => {
@@ -117,7 +118,7 @@ const Products = () => {
     <div className="border-2 border-slate-200 h-auto w-full mt-10 rounded-xl text-xs p-3 font-semibold">
       <div>فیلتر بر اساس رنگ</div>
       <hr className="my-4" />
-      <div className="flex flex-wrap mx-2">
+      <div className="flex flex-wrap mx-2 cursor-pointer">
         {[
           "bg-blue-600",
           "bg-green-500",
@@ -145,7 +146,11 @@ const Products = () => {
       <div className="mx-2">
         {["۵۱", "۵۲", "۵۸"].map((size) => (
           <div key={size} className="flex gap-2 p-1">
-            <input type="checkbox" id={`size-${size}`} />
+            <input
+              className="cursor-pointer"
+              type="checkbox"
+              id={`size-${size}`}
+            />
             <label htmlFor={`size-${size}`}>{size}</label>
           </div>
         ))}
@@ -164,10 +169,13 @@ const Products = () => {
           { rating: 3, count: 1 },
         ].map((rate) => (
           <div key={rate.rating}>
-            <FontAwesomeIcon className="text-yellow-500" icon={faStar} />
+            <FontAwesomeIcon
+              className="text-yellow-500 cursor-pointer"
+              icon={faStar}
+            />
             <span>{rate.rating}</span>
             <span className="mx-2">({rate.count})</span>
-            <hr className="my-4" />
+            <hr className="my-3" />
           </div>
         ))}
       </div>
@@ -180,14 +188,10 @@ const Products = () => {
       className="bg-gray-50 border-2 border-slate-200 w-full sm:w-fit rounded-lg"
     >
       <Link to={`/products/${product.id}`}>
-        <div className="flex justify-between">
-          <div className="bg-red-600 w-12 h-12 text-white rounded-full text-center p-2 text-xs">
-            <span>% 50</span>
-          </div>
-          <div className="p-2 bg-yellow-500 w-fit text-white rounded-s-full rounded-tl-full">
-            <span>فروش ویژه</span>
-          </div>
+        <div className="float-left p-1 text-xs font-bold bg-yellow-400 w-fit text-white rounded-s-full rounded-tl-full">
+          <span>فروش ویژه</span>
         </div>
+
         <div className="mx-8">
           <img
             className="rounded-xl cursor-pointer bg-white"
@@ -197,9 +201,10 @@ const Products = () => {
         </div>
         <div className="m-2">
           <div className="text-xs font-medium">
-            <span className="text-blue-600">{product.price}</span> تومان
+            <span className="main-text">{product.price}</span>{" "}
+            <span className="font-light">تومان</span>
           </div>
-          <div className="text-sm font-bold my-4">{product.name}</div>
+          <div className="text-xs font-bold my-4">{product.name}</div>
           <div className="flex gap-4 text-xs mx-2">
             <div className="border-2 border-slate-500 rounded-full p-1 text-center mt-2 cursor-pointer">
               <FontAwesomeIcon icon={faCartShopping} />
@@ -218,6 +223,9 @@ const Products = () => {
 
   return (
     <div className="container">
+      <div className="mx-12 mt-4 text-xs font-semilight bg-gray-50 w-auto p-2 rounded-lg">
+        خانه / فروشگاه
+      </div>
       <div className="md:flex mx-10 mt-4">
         <div className="sm:w-96">
           <CategoryList />
@@ -227,7 +235,10 @@ const Products = () => {
           <RatingFilter />
         </div>
         <div className="sm:mx-12">
-          <div>
+          <div className="flex gap-2 mt-10 md:mt-0">
+            <span>
+              <FontAwesomeIcon icon={faStore} />
+            </span>
             <div className="text-sm font-bold">فروشگاه</div>
             <div className="bg-black h-1 w-full my-4"></div>
           </div>
