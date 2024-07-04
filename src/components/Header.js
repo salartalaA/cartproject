@@ -30,7 +30,7 @@ const Header = () => {
 
   const handleDecrement = (product) => {
     dispatch(decrement(product));
-    if (product.qty > 1) {
+    if (product > 1) {
       Swal.fire({
         title: "یک واحد از تعداد محصول کم شد",
         icon: "success",
@@ -149,7 +149,7 @@ const Header = () => {
                         <div>
                           <button
                             onClick={() => handleDecrement(product.id)}
-                            disabled={product.qty === 0}
+                            disabled={product.qty === 1}
                           >
                             -
                           </button>
