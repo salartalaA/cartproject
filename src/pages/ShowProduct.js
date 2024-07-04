@@ -246,7 +246,7 @@ const ShowProduct = () => {
         <div class="flex justify-between mt-6">
           <div class="text-xs font-bold">
             <span>نقد و بررسی ها</span>
-            <span class="bg-stone-100 p-2 rounded-lg md:mx-3">۱</span>
+            <span class="bg-stone-100 p-2 rounded-lg md:mx-3">۲</span>
           </div>
           <div class="text-xs font-semibold flex">
             <span class="border-2 border-black p-1 rounded-lg w-fit">
