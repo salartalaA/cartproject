@@ -92,7 +92,7 @@ const Home = () => {
             <div className="bg-black h-1 max-w-96 my-4"></div>
           </div>
           <div className="text-xs font-bold mx-4">
-            <div className="flex lg:flex-nowrap lg:space-x-4 lg:space-x-reverse flex-wrap justify-center lg:justify-normal">
+            <div className="flex lg:flex-nowrap lg:space-x-4 lg:space-x-reverse flex-wrap justify-center gap-4 lg:gap-0 lg:justify-normal">
               {[...Array(5)].map((_, index) => (
                 <ProductCard
                   key={index}
