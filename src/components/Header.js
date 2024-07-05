@@ -99,7 +99,7 @@ const Header = () => {
         </div>
         {cart.length === 0 ? (
           <div>
-            <div className="mx-auto mt-10 bg-slate-200 w-full h-fit p-4 rounded-xl">
+            <div className="mx-auto mt-10 bg-slate-200 w-full h-fit p-4 rounded-lg">
               <div className="text-center">
                 <div className="my-6">
                   <FontAwesomeIcon className="h-12" icon={faCartShopping} />
@@ -108,7 +108,7 @@ const Header = () => {
               </div>
             </div>
             <NavLink onClick={() => handleCloseCartMenu()} to="/products">
-              <div className="text-center my-6 main-bg p-2 rounded-xl text-white">
+              <div className="text-center my-6 main-bg p-2 rounded-lg text-white">
                 بازگشت به فروشگاه
               </div>
             </NavLink>
@@ -175,14 +175,14 @@ const Header = () => {
                 <Link
                   to="/cart"
                   onClick={() => handleCloseCartMenu()}
-                  className="w-fit p-2 bg-slate-200 rounded-xl font-bold text-xs"
+                  className="w-fit p-2 bg-slate-200 rounded-lg font-bold text-xs"
                 >
                   مشاهده سبد خرید
                 </Link>
 
                 <div
                   onClick={() => handleCloseCartMenu()}
-                  className="w-fit p-2 bg-slate-200 rounded-xl font-bold text-xs cursor-pointer"
+                  className="w-fit p-2 bg-slate-200 rounded-lg font-bold text-xs cursor-pointer"
                 >
                   تسویه حساب
                 </div>
@@ -212,14 +212,13 @@ const Header = () => {
               />
             </Link>
             <div className="m-auto">
-              <div className="mt-10 md:mx-0 mx-auto max-w-96 bg-white flex rounded-md">
+              <div className="mt-10 md:mx-0 mx-auto max-w-96 lg:w-96 bg-white flex rounded-md">
                 <div className="m-2">
                   <FontAwesomeIcon icon={faMagnifyingGlass} />
                 </div>
                 <input
                   className="max-w-fit p-2 focus:outline-none"
-                  placeholder="کلید واژه ی مورد نظر"
-                  size="20"
+                  placeholder="کلید واژه ی مورد نظر..."
                 />
                 <div
                   onClick={() => handleOpenCloseSliders()}
@@ -228,7 +227,7 @@ const Header = () => {
                   <FontAwesomeIcon icon={faSliders} />
                   <div
                     id="coffe-menu"
-                    className="absolute -mx-28 mt-2 overflow-y-auto max-h-48 leading-7 text-xs hidden z-50"
+                    className="absolute -mx-32 mt-2 overflow-y-auto max-h-48 leading-7 text-xs hidden z-50"
                   >
                     <div className="w-36 h-auto bg-white text-yellow-400 pr-2">
                       تمام دسته ها
@@ -280,7 +279,7 @@ const Header = () => {
 
               <button onClick={() => handleOpenCloseCartMenu()}>
                 <FontAwesomeIcon icon={faCartShopping} />
-                <span className="absolute -m-2 bg-gray-700 w-4 px-1 text-white rounded-full">
+                <span className="absolute -m-2 bg-gray-700 w-fit text-xs px-1 text-white rounded-full">
                   {cart.length}
                 </span>
               </button>
@@ -295,16 +294,16 @@ const Header = () => {
                 <NavLink to="/products">فروشگاه</NavLink>
               </div>
               <div>
-                <NavLink>لیست قیمت محصولات</NavLink>
+                <NavLink to="/cartproject">لیست قیمت محصولات</NavLink>
               </div>
               <div>
-                <NavLink>وبلاگ</NavLink>
+                <NavLink to="/cartproject">وبلاگ</NavLink>
               </div>
               <div>
-                <NavLink>آموزش</NavLink>
+                <NavLink to="/cartproject">آموزش</NavLink>
               </div>
               <div>
-                <NavLink>تماس با ما</NavLink>
+                <NavLink to="/cartproject">تماس با ما</NavLink>
               </div>
             </div>
             <div className="md:hidden flex gap-2">

@@ -13,11 +13,11 @@ const Footer = () => {
         <div>
           <h4 className="text-yellow-300 mb-4">دسترسی سریع</h4>
           <ul className="space-y-2">
-            <li>تماس با ما</li>
-            <li>وبلاگ</li>
-            <li>شورتکد</li>
-            <li>پیگیری سفارش</li>
-            <li>فروشگاه</li>
+            <li className="cursor-pointer w-fit">تماس با ما</li>
+            <li className="cursor-pointer w-fit">وبلاگ</li>
+            <li className="cursor-pointer w-fit">شورتکد</li>
+            <li className="cursor-pointer w-fit">پیگیری سفارش</li>
+            <li className="cursor-pointer w-fit">فروشگاه</li>
           </ul>
         </div>
 
@@ -25,10 +25,10 @@ const Footer = () => {
         <div>
           <h4 className="text-yellow-300 mb-4">خدمات مشتریان</h4>
           <ul className="space-y-2">
-            <li>سوالات متداول</li>
-            <li>رویه بازگردانی کالا</li>
-            <li>حریم خصوصی</li>
-            <li>تماس با ما</li>
+            <li className="cursor-pointer w-fit">سوالات متداول</li>
+            <li className="cursor-pointer w-fit">رویه بازگردانی کالا</li>
+            <li className="cursor-pointer w-fit">حریم خصوصی</li>
+            <li className="cursor-pointer w-fit">تماس با ما</li>
           </ul>
         </div>
 

@@ -46,7 +46,7 @@ const ShoppingCart = () => {
       <CartHeader />
       <div className="main-bg w-fit p-2 my-8 rounded-lg text-sm">
         <button>
-          <span className="text-white"> سبد خرید</span>{" "}
+          <span className="text-white"> سبد خرید</span>
           <span className="bg-white p-1 rounded-xl">{cart.length}</span>
         </button>
       </div>
@@ -85,15 +85,15 @@ const ShoppingCart = () => {
           تومان
         </div>
       </div>
-      <div className="text-center w-full main-bg font-bold text-white p-3 text-sm rounded-lg cursor-pointer">
+      <div className="text-center w-full main-bg font-bold text-white p-3 text-xs rounded-lg cursor-pointer">
         <button>ادامه جهت تسویه حساب</button>
       </div>
-      <div className="text-center w-full my-2 main-bg font-bold text-white p-3 text-sm rounded-lg cursor-pointer">
+      <div className="text-center w-full my-2 main-bg font-bold text-white p-3 text-xs rounded-lg cursor-pointer">
         <button>پیش فاکتور سبد خرید</button>
       </div>
       <div
         onClick={handleClearCart}
-        className="bg-red-600 hover:bg-red-700 p-2 rounded-lg text-white w-full text-center text-sm font-bold transition-all cursor-pointer"
+        className="bg-red-600 hover:bg-red-700 p-2 rounded-lg text-white w-full text-center text-xs font-bold transition-all cursor-pointer"
       >
         <button>پاکسازی سبد خرید</button>
       </div>
@@ -197,7 +197,7 @@ const ShoppingCart = () => {
               icon={icon}
             />
           </div>
-          <span className="text-sm font-bold">{label}</span>
+          <span className="text-xs font-bold">{label}</span>
         </div>
       ))}
     </div>
@@ -212,8 +212,10 @@ const ShoppingCart = () => {
           <CartHeader />
           <div className="main-bg w-fit p-2 m-8 rounded-lg text-sm">
             <button>
-              <span className="text-white"> سبد خرید</span>{" "}
-              <span className="bg-white p-1 rounded-xl">{cart.length}</span>
+              <span className="text-white"> سبد خرید</span>
+              <span className="bg-white p-1 rounded-xl text-xs mr-1 font-bold">
+                {cart.length}
+              </span>
             </button>
           </div>
           <div className="sm:flex">

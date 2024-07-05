@@ -7,14 +7,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const ImageItem = ({ src, alt }) => (
   <div className="w-full md:w-fit mx-2 my-4">
-    <img className="rounded-xl cursor-pointer" src={src} alt={alt} />
+    <img className="rounded-lg cursor-pointer" src={src} alt={alt} />
   </div>
 );
 
 const ProductCard = ({ src, price, description }) => (
-  <div className="bg-slate-100 w-72 h-80 rounded-lg leading-8">
+  <div className="bg-slate-50 w-72 h-80 rounded-lg leading-8">
     <div className="px-12 pt-6">
-      <img className="rounded-xl cursor-pointer" src={src} alt={description} />
+      <img className="rounded-lg cursor-pointer" src={src} alt={description} />
     </div>
     <div className="m-2">
       <span className="main-text">{price}</span> تومان
@@ -35,7 +35,7 @@ const ProductCard = ({ src, price, description }) => (
 );
 
 const BlogCard = ({ src, title }) => (
-  <div className="w-72 h-80 bg-slate-100 m-4 rounded-xl flex-shrink-0">
+  <div className="w-72 h-80 bg-slate-100 m-4 rounded-lg flex-shrink-0">
     <div className="p-2 text-xs m-2 float-left main-bg w-fit text-white rounded-b-xl rounded-tr-xl">
       وبلاگ
     </div>
@@ -50,9 +50,9 @@ const BlogCard = ({ src, title }) => (
 );
 
 const NewProductCard = ({ src, price, description }) => (
-  <div className="w-full h-24 bg-slate-200 rounded-md flex">
-    <div className="w-24 p-3 mr-4">
-      <img className="rounded-xl" src={src} alt={description} />
+  <div className="w-full h-24 bg-slate-50 rounded-md flex">
+    <div className="w-24 p-3 mr-4 cursor-pointer">
+      <img className="rounded-md" src={src} alt={description} />
     </div>
     <div className="m-4">
       {description}
@@ -91,8 +91,8 @@ const Home = () => {
             آسیاب قهوه
             <div className="bg-black h-1 max-w-96 my-4"></div>
           </div>
-          <div className="text-sm mx-4">
-            <div className="flex lg:flex-nowrap lg:space-x-4 lg:space-x-reverse flex-wrap justify-center lg:justify-normal gap-4 flex-shrink-0">
+          <div className="text-xs font-bold mx-4">
+            <div className="flex lg:flex-nowrap lg:space-x-4 lg:space-x-reverse flex-wrap justify-center lg:justify-normal">
               {[...Array(5)].map((_, index) => (
                 <ProductCard
                   key={index}
@@ -149,24 +149,24 @@ const Home = () => {
       </div>
       <div className="sm:grid hidden sm:grid-cols-2 md:grid-cols-5 gap-4 leading-8 mt-10">
         <div>
-          <div className="font-semibold">تحویل اکسپرس</div>
-          <div className="text-sm">ارسال به سراسر کشور</div>
+          <div>تحویل اکسپرس</div>
+          <div className="text-xs">ارسال به سراسر کشور</div>
         </div>
         <div>
-          <div className="font-semibold">پرداخت در محل </div>
-          <div className="text-sm"> تضمین امنیت خرید</div>
+          <div>پرداخت در محل </div>
+          <div className="text-xs"> تضمین امنیت خرید</div>
         </div>
         <div>
-          <div className="font-semibold">تضمین قیمت </div>
-          <div className="text-sm"> تضمین بهترین قیمت </div>
+          <div>تضمین قیمت </div>
+          <div className="text-xs"> تضمین بهترین قیمت </div>
         </div>
         <div>
-          <div className="font-semibold">ارسال به تمام نقاط </div>
-          <div className="text-sm">ارسال به تمام نقاط کشور </div>
+          <div>ارسال به تمام نقاط </div>
+          <div className="text-xs">ارسال به تمام نقاط کشور </div>
         </div>
         <div>
-          <div className="font-semibold">ضمانت بازگشت </div>
-          <div className="text-sm">7 روز ضمانت بازگشت کالا</div>
+          <div>ضمانت بازگشت </div>
+          <div className="text-xs">7 روز ضمانت بازگشت کالا</div>
         </div>
       </div>
       <div className="w-full h-2 bg-footer my-12"></div>

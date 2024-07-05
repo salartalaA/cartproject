@@ -204,7 +204,7 @@ const Products = () => {
             <span className="main-text">{product.price}</span>{" "}
             <span className="font-light">تومان</span>
           </div>
-          <div className="text-xs font-bold my-4">{product.name}</div>
+          <div className="text-xs font-medium my-4">{product.name}</div>
           <div className="flex gap-4 text-xs mx-2">
             <div className="border-2 border-slate-500 rounded-full p-1 text-center mt-2 cursor-pointer">
               <FontAwesomeIcon icon={faCartShopping} />
