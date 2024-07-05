@@ -294,16 +294,16 @@ const Header = () => {
                 <NavLink to="/products">فروشگاه</NavLink>
               </div>
               <div>
-                <NavLink to="/cartproject">لیست قیمت محصولات</NavLink>
+                <div>لیست قیمت محصولات</div>
               </div>
               <div>
-                <NavLink to="/cartproject">وبلاگ</NavLink>
+                <div>وبلاگ</div>
               </div>
               <div>
-                <NavLink to="/cartproject">آموزش</NavLink>
+                <div>آموزش</div>
               </div>
               <div>
-                <NavLink to="/cartproject">تماس با ما</NavLink>
+                <div>تماس با ما</div>
               </div>
             </div>
             <div className="md:hidden flex gap-2">
