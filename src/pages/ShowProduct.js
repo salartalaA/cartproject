@@ -480,7 +480,7 @@ const ShowProduct = () => {
           </div>
           <div className="flex gap-2">
             <h2 className="text-xs my-4 font-bold">وزن بسته بندی</h2>
-            <div className="flex space-x-4 space-x-reverse m-3 mx-auto text-white">
+            <div className="flex gap-4 m-3 mx-auto text-white">
               {["۲۵۰", "۵۰۰", "۷۰۰"].map((weight) => (
                 <div
                   key={weight}
@@ -498,7 +498,7 @@ const ShowProduct = () => {
             <h2 className="font-bold my-2">آسیاب</h2>
             <div className="max-w-96">
               <select
-                className="w-46 border-2 border-slate-100 shadow-md p-2 rounded-lg cursor-pointer focus:outline-none"
+                className="border-2 border-slate-100 shadow-md p-2 rounded-lg cursor-pointer focus:outline-none"
                 value={selectedEqs}
                 onChange={handleEqsChange}
               >
@@ -609,7 +609,7 @@ const ShowProduct = () => {
           </div>
         </div>
       </div>
-      <div className="flex text-nowrap overflow-x-auto py-6 justify-center gap-6 mx-auto text-white text-xs font-bold">
+      <div className="flex flex-wrap py-6 justify-center gap-6 mx-auto text-white text-xs font-bold">
         <div
           id="explain"
           onClick={handleExplain}
