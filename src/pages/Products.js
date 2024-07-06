@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../redux/products/action";
 import { Link } from "react-router-dom";
@@ -19,97 +19,32 @@ const Products = () => {
     dispatch(getProducts());
   }, [dispatch]);
 
-  const CategoryList = () => (
+  const FilterList = ({ title, items }) => (
     <div className="border-2 border-slate-200 shadow-md h-auto w-full mt-10 rounded-xl text-xs p-3 font-semibold">
-      <div>دسته های محصولات</div>
+      <div>{title}</div>
       <hr className="my-4" />
-      <div className="leading-9">
-        {[
-          "آسیاب قهوه",
-          "اسپرسوسازها",
-          "تجهیزات بار سرد",
-          "تجهیزات جانبی",
-          "تجهیزات دمی و نسل سوم",
-          "دان قهوه و پودر قهوه",
-          "فرنج پرس ها",
-          "فروش ویژه",
-          "لوازم یدکی",
-          "ماگ و فنجان",
-          "محصولات فوری و پوری",
-          "موکاپات ها",
-        ].map((category) => (
-          <div key={category}>{category}</div>
-        ))}
-      </div>
-    </div>
-  );
-
-  const BrandList = () => (
-    <div className="border-2 border-slate-200 shadow-md h-auto w-full my-10 rounded-xl text-xs p-3 font-semibold">
-      <div>برندها</div>
-      <hr className="my-4" />
-      <div className="grid grid-cols-2 mt-12 mx-auto w-fit text-center gap-3">
-        {[
-          {
-            name: "اسمگ",
-            src: "https://28coffee.ir/wp-content/uploads/2024/04/smeg.jpg",
-          },
-          {
-            name: "بارنی",
-            src: "https://28coffee.ir/wp-content/uploads/2024/04/barni.jpg",
-          },
-          {
-            name: "برویل",
-            src: "https://28coffee.ir/wp-content/uploads/2024/04/breville.jpg",
-          },
-          {
-            name: "جی پاس",
-            src: "https://28coffee.ir/wp-content/uploads/2024/04/geepas.jpg",
-          },
-          {
-            name: "جیمیلای",
-            src: "https://28coffee.ir/wp-content/uploads/2024/04/gemilai.jpg",
-          },
-          {
-            name: "داونگی",
-            src: "https://28coffee.ir/wp-content/uploads/2024/04/delonghi.jpg",
-          },
-          {
-            name: "فیلیپس",
-            src: "https://28coffee.ir/wp-content/uploads/2018/02/philips.png",
-          },
-          {
-            name: "لواک",
-            src: "https://28coffee.ir/wp-content/uploads/2024/04/luwak.jpg",
-          },
-          {
-            name: "مباشی",
-            src: "https://28coffee.ir/wp-content/uploads/2024/04/mebashi.jpg",
-          },
-          {
-            name: "نوا",
-            src: "https://28coffee.ir/wp-content/uploads/2024/04/nova.jpg",
-          },
-        ].map((brand) => (
-          <div
-            key={brand.name}
-            className="max-w-24 border-2 border-slate-200 shadow-md p-2 rounded-xl"
-          >
-            <div>
-              <img src={brand.src} alt={brand.name} />
+      <div
+        className={
+          title === "برندها"
+            ? "grid grid-cols-2 mt-12 mx-auto w-fit text-center gap-3 cursor-pointer"
+            : "leading-9"
+        }
+      >
+        {items.map((item, index) =>
+          title === "برندها" ? (
+            <div
+              key={index}
+              className="max-w-24 border-2 border-slate-200 shadow-md p-2 rounded-xl"
+            >
+              <div>
+                <img src={item.src} alt={item.name} />
+              </div>
+              {item.name}
             </div>
-            {brand.name}
-          </div>
-        ))}
-      </div>
-      <div className="border-2 border-slate-200 shadow-md p-2 max-w-full rounded-xl mt-3 text-center">
-        <div className="w-24 mx-auto">
-          <img
-            src="https://28coffee.ir/wp-content/uploads/2024/04/unique-life.jpg"
-            alt="یونیک لایف"
-          />
-        </div>
-        یونیک لایف
+          ) : (
+            <div key={index}>{item}</div>
+          )
+        )}
       </div>
     </div>
   );
@@ -118,7 +53,7 @@ const Products = () => {
     <div className="border-2 border-slate-200 shadow-md h-auto w-full mt-10 rounded-xl text-xs p-3 font-semibold">
       <div>فیلتر بر اساس رنگ</div>
       <hr className="my-4" />
-      <div className="flex flex-wrap mx-2 cursor-pointer">
+      <div className="flex flex-wrap gap-1 mx-2">
         {[
           "bg-blue-600",
           "bg-green-500",
@@ -127,10 +62,10 @@ const Products = () => {
           "bg-red-600",
           "bg-stone-500",
           "bg-gray-300",
-        ].map((color) => (
+        ].map((color, index) => (
           <div
-            key={color}
-            className="border-2 border-slate-100 p-1 w-fit rounded-xl"
+            key={index}
+            className="border-2 border-slate-100 p-1 w-fit rounded-lg cursor-pointer"
           >
             <div className={`w-6 h-6 ${color} shadow-md rounded-full`}></div>
           </div>
@@ -144,14 +79,10 @@ const Products = () => {
       <div>فیلتر بر اساس سایز</div>
       <hr className="my-4" />
       <div className="mx-2">
-        {["۵۱", "۵۲", "۵۸"].map((size) => (
-          <div key={size} className="flex gap-2 p-1">
-            <input
-              className="cursor-pointer"
-              type="checkbox"
-              id={`size-${size}`}
-            />
-            <label htmlFor={`size-${size}`}>{size}</label>
+        {["۵۱", "۵۲", "۵۸"].map((size, index) => (
+          <div key={index} className="flex gap-2 p-1">
+            <input className="cursor-pointer" type="checkbox" />
+            <label>{size}</label>
           </div>
         ))}
       </div>
@@ -167,8 +98,8 @@ const Products = () => {
           { rating: 5, count: 2 },
           { rating: 4, count: 1 },
           { rating: 3, count: 1 },
-        ].map((rate) => (
-          <div key={rate.rating}>
+        ].map((rate, index) => (
+          <div key={index}>
             <FontAwesomeIcon
               className="text-yellow-500 cursor-pointer"
               icon={faStar}
@@ -182,19 +113,16 @@ const Products = () => {
     </div>
   );
 
-  const ProductCard = ({ product }) => (
-    <div
-      key={product.id}
-      className="border-2 border-slate-200 shadow-md w-full sm:w-fit rounded-lg"
-    >
+  const ProductCard = React.memo(({ product }) => (
+    <div className="border-2 border-slate-200 shadow-md w-full sm:w-fit rounded-lg">
       <Link to={`/products/${product.id}`}>
-        <div className="float-left p-1 text-xs font-bold bg-yellow-400 w-fit text-white rounded-s-full rounded-tl-full">
+        <div className="float-left p-1 text-xs font-bold bg-yellow-400 w-fit text-white rounded-s-full m-2 rounded-tl-full">
           <span>فروش ویژه</span>
         </div>
 
-        <div className="mx-8">
+        <div className="sm:mx-16 md:mx-8">
           <img
-            className="rounded-xl cursor-pointer bg-white"
+            className="mt-6 cursor-pointer bg-gray-50 shadow-md"
             src={product.image}
             alt={product.name}
           />
@@ -205,7 +133,7 @@ const Products = () => {
             <span className="font-light">تومان</span>
           </div>
           <div className="text-xs font-medium my-4">{product.name}</div>
-          <div className="flex gap-4 text-xs mx-2">
+          <div className="flex flex-wrap gap-4 text-xs mx-2">
             <div className="border-2 border-slate-500 rounded-full p-1 text-center mt-2 cursor-pointer">
               <FontAwesomeIcon icon={faCartShopping} />
             </div>
@@ -219,7 +147,7 @@ const Products = () => {
         </div>
       </Link>
     </div>
-  );
+  ));
 
   return (
     <div className="container">
@@ -227,9 +155,69 @@ const Products = () => {
         خانه / فروشگاه
       </div>
       <div className="md:flex mx-10 mt-4">
-        <div className="sm:w-96">
-          <CategoryList />
-          <BrandList />
+        <div className="sm:w-96 hidden md:block">
+          <FilterList
+            title="دسته های محصولات"
+            items={[
+              "آسیاب قهوه",
+              "اسپرسوسازها",
+              "تجهیزات بار سرد",
+              "تجهیزات جانبی",
+              "تجهیزات دمی و نسل سوم",
+              "دان قهوه و پودر قهوه",
+              "فرنج پرس ها",
+              "فروش ویژه",
+              "لوازم یدکی",
+              "ماگ و فنجان",
+              "محصولات فوری و پوری",
+              "موکاپات ها",
+            ]}
+          />
+          <FilterList
+            title="برندها"
+            items={[
+              {
+                name: "اسمگ",
+                src: "https://28coffee.ir/wp-content/uploads/2024/04/smeg.jpg",
+              },
+              {
+                name: "بارنی",
+                src: "https://28coffee.ir/wp-content/uploads/2024/04/barni.jpg",
+              },
+              {
+                name: "برویل",
+                src: "https://28coffee.ir/wp-content/uploads/2024/04/breville.jpg",
+              },
+              {
+                name: "جی پاس",
+                src: "https://28coffee.ir/wp-content/uploads/2024/04/geepas.jpg",
+              },
+              {
+                name: "جیمیلای",
+                src: "https://28coffee.ir/wp-content/uploads/2024/04/gemilai.jpg",
+              },
+              {
+                name: "داونگی",
+                src: "https://28coffee.ir/wp-content/uploads/2024/04/delonghi.jpg",
+              },
+              {
+                name: "فیلیپس",
+                src: "https://28coffee.ir/wp-content/uploads/2018/02/philips.png",
+              },
+              {
+                name: "لواک",
+                src: "https://28coffee.ir/wp-content/uploads/2024/04/luwak.jpg",
+              },
+              {
+                name: "مباشی",
+                src: "https://28coffee.ir/wp-content/uploads/2024/04/mebashi.jpg",
+              },
+              {
+                name: "نوا",
+                src: "https://28coffee.ir/wp-content/uploads/2024/04/nova.jpg",
+              },
+            ]}
+          />
           <ColorFilter />
           <SizeFilter />
           <RatingFilter />
@@ -242,7 +230,7 @@ const Products = () => {
             <div className="text-sm font-bold">فروشگاه</div>
             <div className="bg-black h-1 w-full my-4"></div>
           </div>
-          <div className="grid lg:grid-cols-4 sm:grid-cols-2 gap-4 my-6">
+          <div className="grid lg:grid-cols-4 grid-cols-2 gap-4 my-6">
             {products ? (
               products.map((product) => (
                 <ProductCard key={product.id} product={product} />
@@ -251,6 +239,73 @@ const Products = () => {
               <div>Loading...</div>
             )}
           </div>
+        </div>
+        <div className="sm:w-96 block md:hidden">
+          <FilterList
+            title="دسته های محصولات"
+            items={[
+              "آسیاب قهوه",
+              "اسپرسوسازها",
+              "تجهیزات بار سرد",
+              "تجهیزات جانبی",
+              "تجهیزات دمی و نسل سوم",
+              "دان قهوه و پودر قهوه",
+              "فرنج پرس ها",
+              "فروش ویژه",
+              "لوازم یدکی",
+              "ماگ و فنجان",
+              "محصولات فوری و پوری",
+              "موکاپات ها",
+            ]}
+          />
+          <FilterList
+            title="برندها"
+            items={[
+              {
+                name: "اسمگ",
+                src: "https://28coffee.ir/wp-content/uploads/2024/04/smeg.jpg",
+              },
+              {
+                name: "بارنی",
+                src: "https://28coffee.ir/wp-content/uploads/2024/04/barni.jpg",
+              },
+              {
+                name: "برویل",
+                src: "https://28coffee.ir/wp-content/uploads/2024/04/breville.jpg",
+              },
+              {
+                name: "جی پاس",
+                src: "https://28coffee.ir/wp-content/uploads/2024/04/geepas.jpg",
+              },
+              {
+                name: "جیمیلای",
+                src: "https://28coffee.ir/wp-content/uploads/2024/04/gemilai.jpg",
+              },
+              {
+                name: "داونگی",
+                src: "https://28coffee.ir/wp-content/uploads/2024/04/delonghi.jpg",
+              },
+              {
+                name: "فیلیپس",
+                src: "https://28coffee.ir/wp-content/uploads/2018/02/philips.png",
+              },
+              {
+                name: "لواک",
+                src: "https://28coffee.ir/wp-content/uploads/2024/04/luwak.jpg",
+              },
+              {
+                name: "مباشی",
+                src: "https://28coffee.ir/wp-content/uploads/2024/04/mebashi.jpg",
+              },
+              {
+                name: "نوا",
+                src: "https://28coffee.ir/wp-content/uploads/2024/04/nova.jpg",
+              },
+            ]}
+          />
+          <ColorFilter />
+          <SizeFilter />
+          <RatingFilter />
         </div>
       </div>
     </div>

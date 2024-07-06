@@ -425,6 +425,7 @@ const ShowProduct = () => {
         </div>
       </div>`;
   };
+
   if (loading) return <h2>Loading...</h2>;
   if (error) return <h2>Error loading products: {error}</h2>;
   if (!products || products.length === 0)
@@ -460,7 +461,7 @@ const ShowProduct = () => {
             گزارش نادرستی مشخصات
           </div>
         </div>
-        <div className="bg-white mx-8 p-6 rounded-xl w-fit md:w-96">
+        <div className="bg-white xl:mx-14 p-6 rounded-xl w-fit md:w-96">
           <div className="mb-4 flex items-center">
             <span className="text font-semibold">{selectedProduct.name}</span>
             <span className="bg-sky-300 text-blue-600 text-xs font-semibold mx-4 p-1 rounded-xl">
@@ -477,7 +478,7 @@ const ShowProduct = () => {
           <div className="my-4 mt-8 text-sm font-bold">
             <span className="text-blue-600">{selectedProduct.price}</span> تومان
           </div>
-          <div className="flex">
+          <div className="flex gap-2">
             <h2 className="text-xs my-4 font-bold">وزن بسته بندی</h2>
             <div className="flex space-x-4 space-x-reverse m-3 mx-auto text-white">
               {["۲۵۰", "۵۰۰", "۷۰۰"].map((weight) => (
@@ -493,11 +494,11 @@ const ShowProduct = () => {
               ))}
             </div>
           </div>
-          <div className="sm:flex text-xs">
+          <div className="flex md:gap-20 gap-12 text-xs">
             <h2 className="font-bold my-2">آسیاب</h2>
-            <div className="max-w-96 sm:mx-24">
+            <div className="max-w-96">
               <select
-                className="w-46 border-2 border-slate-100 shadow-md p-2 rounded-xl cursor-pointer focus:outline-none"
+                className="w-46 border-2 border-slate-100 shadow-md p-2 rounded-lg cursor-pointer focus:outline-none"
                 value={selectedEqs}
                 onChange={handleEqsChange}
               >
@@ -508,9 +509,9 @@ const ShowProduct = () => {
               </select>
             </div>
           </div>
-          <div className="lg:flex my-6">
+          <div className="flex my-6">
             <div className="flex">
-              <div className="text-center border-2 w-full lg:w-fit border-slate-100 shadow-md p-3 py-5 rounded-s-lg text-sm">
+              <div className="text-center border-2 w-fit border-slate-100 shadow-md p-3 py-5 rounded-s-lg text-sm">
                 {selectedProductQty}
               </div>
               <div className="text-center border-2 border-slate-100 shadow-md p-3 rounded-e-lg text-sm">
@@ -539,7 +540,7 @@ const ShowProduct = () => {
                 </div>
                 <button
                   onClick={() => handleAddToCart(selectedProduct)}
-                  className={`w-full text-xs sm:text-sm my-4 border-1 rounded-e-lg p-2 shadow-md text-white cursor-pointer ${
+                  className={`text-xs sm:text-sm my-4 border-1 rounded-e-lg p-2.5 md:p-2 shadow-md text-white cursor-pointer ${
                     isButtonDisabled ? "bg-gray-600" : "bg-green-800"
                   }`}
                   disabled={isButtonDisabled || selectedProductQty >= 1}
@@ -571,6 +572,7 @@ const ShowProduct = () => {
               <span className="mx-1">۳</span>
             </div>
             <div className="text-xs my-4">(۱ بررسی مشتری)</div>
+            <hr />
             <div className="text-xs py-4">
               <FontAwesomeIcon
                 className="text-green-600"
@@ -579,13 +581,13 @@ const ShowProduct = () => {
               <span className="m-2">موجود است</span>
             </div>
           </div>
-          <div className="flex justify-between gap-4 p-6">
-            <div className="flex text-xs">
-              <div className="border-2 border-slate-100 shadow-md p-2 rounded-xl mx-4 cursor-pointer hover:bg-sky-500 hover:text-white transition-all">
+          <div className="flex gap-4 p-6">
+            <div className="flex justify-between w-full text-xs">
+              <div className="w-fit md:w-full lg:w-fit text-center border-2 border-slate-100 shadow-md p-2 rounded-xl mx-4 cursor-pointer hover:bg-sky-500 hover:text-white transition-all">
                 <FontAwesomeIcon className="mx-2" icon={faCodeCompare} />
                 <button>مقایسه</button>
               </div>
-              <div className="border-2 border-slate-100 shadow-md p-2 rounded-xl cursor-pointer hover:bg-sky-500 hover:text-white transition-all">
+              <div className="w-fit md:w-full lg:w-fit text-center border-2 border-slate-100 shadow-md p-2 rounded-xl cursor-pointer hover:bg-sky-500 hover:text-white transition-all">
                 <FontAwesomeIcon className="mx-2" icon={faBookmark} />
                 <button>افزودن به علاقه مندی ها</button>
               </div>
@@ -607,7 +609,7 @@ const ShowProduct = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-wrap justify-center gap-6 mx-auto my-12 text-white text-xs font-bold">
+      <div className="flex text-nowrap overflow-x-auto py-6 justify-center gap-6 mx-auto text-white text-xs font-bold">
         <div
           id="explain"
           onClick={handleExplain}

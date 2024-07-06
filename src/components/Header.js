@@ -62,7 +62,7 @@ const Header = () => {
   };
   const handleMobileMenu = () => {
     const mobile_menu = document.querySelector(".mobile-nav");
-    mobile_menu.classList.toggle("is-active");
+    mobile_menu.classList.add("is-active");
   };
   const handleCloseMobileMenu = () => {
     const mobile_menu = document.querySelector(".mobile-nav");
@@ -87,7 +87,7 @@ const Header = () => {
       >
         <div>
           سبد خرید
-          <span className="p-1 bg-yellow-400 text-white rounded-full mx-2">
+          <span className="p-1 bg-yellow-400 rounded-sm text-white mx-2">
             {cart.length}
           </span>
           <span
@@ -99,19 +99,14 @@ const Header = () => {
         </div>
         {cart.length === 0 ? (
           <div>
-            <div className="mx-auto mt-10 bg-slate-50 shadow-md w-full h-fit p-4 rounded-lg">
+            <div className="mx-auto mt-10 bg-slate-50 shadow-md w-full h-fit p-4 rounded-md">
               <div className="text-center">
                 <div className="my-6">
                   <FontAwesomeIcon className="h-12" icon={faCartShopping} />
                 </div>
-                <div>هیچ محصولی در سبد حرید نیست!</div>
+                <div>هیچ محصولی در سبد حرید نیست.</div>
               </div>
             </div>
-            <NavLink onClick={() => handleCloseCartMenu()} to="/products">
-              <div className="text-center my-6 main-bg p-2 rounded-lg text-white shadow-md">
-                بازگشت به فروشگاه
-              </div>
-            </NavLink>
           </div>
         ) : (
           <div>
@@ -171,18 +166,19 @@ const Header = () => {
                   <span className="font-light mx-1">تومان</span>
                 </div>
               </div>
+              <hr className="mt-4 bg-black w-full" />
               <div className="flex justify-between p-4">
                 <Link
                   to="/cart"
                   onClick={() => handleCloseCartMenu()}
-                  className="w-fit p-2 shadow-md hover:bg-sky-500 transition-all hover:text-white rounded-lg font-bold text-xs"
+                  className="w-fit p-2 bg-gray-100 shadow-md hover:bg-sky-500 transition-all hover:text-white rounded-md font-bold text-xs"
                 >
                   مشاهده سبد خرید
                 </Link>
 
                 <div
                   onClick={() => handleCloseCartMenu()}
-                  className="w-fit p-2 shadow-md hover:bg-sky-500 transition-all hover:text-white rounded-lg font-bold text-xs cursor-pointer"
+                  className="w-fit p-2 bg-gray-100 shadow-md hover:bg-sky-500 transition-all hover:text-white rounded-md font-bold text-xs cursor-pointer"
                 >
                   تسویه حساب
                 </div>
@@ -191,7 +187,7 @@ const Header = () => {
           </div>
         )}
       </div>
-      <div className="bg-footer h-fit p-6 text-white text-2xl">
+      <div className="hidden md:block bg-footer h-fit p-6 text-white text-2xl">
         <div className="container">
           <div>
             <p className="newFont">
@@ -212,11 +208,12 @@ const Header = () => {
               />
             </Link>
             <div className="m-auto">
-              <div className="mt-10 md:mx-0 mx-auto max-w-96 lg:w-96 bg-white shadow-md flex rounded-md">
+              <div className="md:mt-10 md:mx-0 mx-auto max-w-96 lg:w-96 bg-white shadow-md flex rounded-md">
                 <div className="m-2">
                   <FontAwesomeIcon icon={faMagnifyingGlass} />
                 </div>
                 <input
+                  id="search-bar"
                   className="max-w-fit p-2 focus:outline-none"
                   placeholder="کلید واژه ی مورد نظر..."
                 />
@@ -270,15 +267,15 @@ const Header = () => {
               </div>
             </div>
             <div className="flex space-x-4 space-x-reverse justify-between mt-6 md:mt-16">
-              <div className="flex gap-2">
+              <div className="flex gap-2 mx-3 md:mx-0">
                 <div>
                   <FontAwesomeIcon icon={faUser} />
                 </div>
-                <div className="font-light">ورود / عضویت</div>
+                <div className="text-xs font-bold">ورود / عضویت</div>
               </div>
 
               <button
-                className="flex"
+                className="flex my-auto md:my-0 w-3"
                 onClick={() => handleOpenCloseCartMenu()}
               >
                 <FontAwesomeIcon icon={faCartShopping} />
@@ -288,8 +285,8 @@ const Header = () => {
               </button>
             </div>
           </div>
-          <div className="pt-10 py-4 flex justify-between text-xs font-bold">
-            <div className="hidden md:flex space-x-4 space-x-reverse">
+          <div className="pt-6 md:py-3 md:pt-10 flex justify-between text-xs font-bold">
+            <div className="hidden lg:flex space-x-4 space-x-reverse">
               <div>
                 <NavLink to="/cartproject">خانه</NavLink>
               </div>
@@ -309,11 +306,11 @@ const Header = () => {
                 <div>تماس با ما</div>
               </div>
             </div>
-            <div className="md:hidden flex gap-2">
+            <div className="lg:hidden flex gap-2">
               <div onClick={() => handleMobileMenu()} className="hamburger">
                 <div className="bar"></div>
               </div>
-              <span>فهرست</span>
+              <span className="my-auto">فهرست</span>
             </div>
             <div className="mobile-nav transition-all rounded-2xl">
               <div>
@@ -326,7 +323,7 @@ const Header = () => {
                 <div>
                   <Link
                     to="/cartproject"
-                    className="hover:text-sky-600 mt-12 text-xs font-bold md:text-lg"
+                    className="hover:text-sky-600 mt-12 text-xs font-bold"
                   >
                     خانه
                   </Link>
@@ -334,38 +331,38 @@ const Header = () => {
                 <div>
                   <Link
                     to="/products"
-                    className="hover:text-sky-600 mt-12 text-xs font-bold md:text-lg"
+                    className="hover:text-sky-600 mt-12 text-xs font-bold"
                   >
                     لیست قیمت محصولات
                   </Link>
                 </div>
                 <hr />
-                <div className="hover:text-sky-600 text-xs font-bold md:text-lg">
+                <div className="hover:text-sky-600 text-xs font-bold">
                   پرسش و پاسخ
                 </div>
                 <hr />
-                <div className="hover:text-sky-600 text-xs font-bold md:text-lg">
+                <div className="hover:text-sky-600 text-xs font-bold">
                   پیگیری سفارش
                 </div>
                 <hr />
                 <div>
                   <Link
                     to="/cart"
-                    className="hover:text-sky-600 mt-12 text-xs font-bold md:text-lg"
+                    className="hover:text-sky-600 mt-12 text-xs font-bold"
                   >
                     سبد خرید
                   </Link>
                 </div>
                 <hr />
-                <div className="hover:text-sky-600 text-xs font-bold md:text-lg">
+                <div className="hover:text-sky-600 text-xs font-bold">
                   وبلاگ
                 </div>
               </div>
             </div>
 
             <div className="flex space-x-4 space-x-reverse text-sm">
-              <div>۰۹۱۶۹۷۷۸۰۰۶</div>
-              <div className="cursor-pointer">
+              <div className="my-auto">۰۹۱۶۹۷۷۸۰۰۶</div>
+              <div className="cursor-pointer my-auto">
                 <FontAwesomeIcon icon={faPhoneVolume} />
               </div>
             </div>

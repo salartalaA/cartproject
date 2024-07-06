@@ -12,7 +12,7 @@ const ImageItem = ({ src, alt }) => {
 
   return (
     <motion.div
-      className="sm:w-full md:w-fit mx-2 my-4"
+      className="sm:w-full md:w-fit mx-2 md:my-3 mb-3"
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
       animate={
@@ -94,6 +94,7 @@ const NewProductCard = ({ src, price, description }) => (
 );
 
 const Home = () => {
+  const [isHovering, setIsHovering] = useState(false);
   const imageSrc =
     "https://28coffee.ir/wp-content/uploads/2023/02/01coffee28-group.webp";
   const productSrc =
@@ -105,27 +106,45 @@ const Home = () => {
   return (
     <div className="container">
       <div>
-        <div className="block md:grid md:grid-cols-2 lg:grid-cols-3">
+        <div className="block md:grid md:grid-cols-3">
           {[...Array(12)].map((_, index) => (
             <ImageItem key={index} src={imageSrc} alt={`image-${index}`} />
           ))}
         </div>
-        <div className="w-full px-6 md:w-1/2 mx-auto cursor-pointer">
+        <motion.div
+          className="w-full px-6 md:w-1/2 mx-auto cursor-pointer"
+          onMouseEnter={() => setIsHovering(true)}
+          onMouseLeave={() => setIsHovering(false)}
+          animate={
+            isHovering
+              ? {
+                  y: [0, -10, 10, 0],
+                  transition: {
+                    y: {
+                      duration: 1,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    },
+                  },
+                }
+              : { y: 0 }
+          }
+        >
           <img
             src="https://28coffee.ir/wp-content/uploads/2023/02/Banner-instegram_coffee28-1536x445.webp"
             alt="Instagram Banner"
           />
-        </div>
+        </motion.div>
         <div className="my-12">
-          <div className="m-6 flex justify-between">
-            <div>آسیاب قهوه</div>
+          <div className="m-3 pb-4 flex justify-between">
+            <div className="text-xs font-bold">آسیاب قهوه</div>
             <div className="flex text-xs font-bold">
               <div className="w-4 h-4 main-bg rounded-full"></div>
               <span>مشاهده همه</span>
             </div>
           </div>
-          <div className="text-xs font-bold mx-4">
-            <div className="flex lg:flex-nowrap lg:space-x-4 lg:space-x-reverse flex-wrap justify-center gap-4 lg:gap-0 lg:justify-normal">
+          <div className="text-xs font-bold mx-4 overflow-x-auto">
+            <div className="flex lg:space-x-4 lg:space-x-reverse gap-4 lg:gap-0 min-w-fit mb-4 md:mb-4">
               {[...Array(5)].map((_, index) => (
                 <ProductCard
                   key={index}
@@ -137,22 +156,62 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="w-full px-6 md:w-1/2 mx-auto cursor-pointer">
+        <hr />
+        <div className="my-12">
+          <div className="m-3 pb-4 flex justify-between">
+            <div className="text-xs font-bold">اسپرسوساز</div>
+            <div className="flex text-xs font-bold">
+              <div className="w-4 h-4 main-bg rounded-full"></div>
+              <span>مشاهده همه</span>
+            </div>
+          </div>
+          <div className="text-xs font-bold mx-4 overflow-x-auto">
+            <div className="flex lg:space-x-4 lg:space-x-reverse gap-4 lg:gap-0 min-w-fit mb-4 md:mb-4">
+              {[...Array(5)].map((_, index) => (
+                <ProductCard
+                  key={index}
+                  src="https://28coffee.ir/wp-content/uploads/2024/07/IMG-20240706-WA0015-185x185.jpg"
+                  price="1000000"
+                  description="تیوارکس ۷۱۷۰"
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+        <motion.div
+          className="w-full px-6 md:w-1/2 mx-auto cursor-pointer"
+          onMouseEnter={() => setIsHovering(true)}
+          onMouseLeave={() => setIsHovering(false)}
+          animate={
+            isHovering
+              ? {
+                  y: [0, -10, 10, 0],
+                  transition: {
+                    y: {
+                      duration: 1,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    },
+                  },
+                }
+              : { y: 0 }
+          }
+        >
           <img
             src="https://28coffee.ir/wp-content/uploads/2023/02/Banner-telegram_coffee28-1536x445.png"
             alt="Telegram Banner"
           />
-        </div>
+        </motion.div>
 
         <div className="m-6 flex justify-between">
-          <div>جدیدترین محصولات</div>
+          <div className="text-xs font-bold">جدیدترین محصولات</div>
           <div className="flex text-xs font-bold">
             <div className="w-4 h-4 main-bg rounded-full"></div>
             <span>مشاهده همه</span>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mx-4 text-xs font-bold">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mx-4 text-xs font-bold">
           {[...Array(6)].map((_, index) => (
             <NewProductCard
               key={index}
@@ -176,8 +235,8 @@ const Home = () => {
           </p>
         </div>
 
-        <div className="m-3 flex justify-between">
-          <div>وبلاگ</div>
+        <div className="m-3 pt-4 md:pt-0 flex justify-between">
+          <div className="text-sm font-bold">وبلاگ</div>
           <div className="flex text-xs font-bold">
             <div className="w-4 h-4 main-bg rounded-full"></div>
             <span>مشاهده همه</span>
@@ -190,7 +249,7 @@ const Home = () => {
           ))}
         </div>
       </div>
-      <div className="sm:grid hidden sm:grid-cols-2 md:grid-cols-5 gap-4 leading-8 mt-10">
+      <div className="sm:grid hidden sm:grid-cols-2 md:grid-cols-5 gap-4 leading-8 mt-10 mx-3">
         <div>
           <div className="text-sm font-bold leading-8">تحویل اکسپرس</div>
           <div className="text-xs">ارسال به سراسر کشور</div>
@@ -212,7 +271,7 @@ const Home = () => {
           <div className="text-xs">7 روز ضمانت بازگشت کالا</div>
         </div>
       </div>
-      <div className="w-full h-2 bg-footer my-12"></div>
+      <div className="w-full h-1 bg-footer my-12"></div>
       <div className="mx-4">
         <div className="max-w-24 my-4">
           <img
@@ -228,7 +287,7 @@ const Home = () => {
           پاسخگوی شما هستیم
         </p>
       </div>
-      <div className="w-full h-2 bg-footer my-12"></div>
+      <div className="w-full h-1 bg-footer my-12"></div>
     </div>
   );
 };
