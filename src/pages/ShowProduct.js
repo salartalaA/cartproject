@@ -118,51 +118,51 @@ const ShowProduct = () => {
 
     const box = document.getElementById("box");
     box.innerHTML = ` <div class="w-full h-full rounded-xl">
-        <div class="text-sm font-semibold flex">
-          <span class="m-2 border-2 border-black p-2 rounded-lg text-sm w-fit">
-            <svg
-              class="w-3"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 448 512"
-            >
-              <path d="M128 0c17.7 0 32 14.3 32 32V64H288V32c0-17.7 14.3-32 32-32s32 14.3 32 32V64h48c26.5 0 48 21.5 48 48v48H0V112C0 85.5 21.5 64 48 64H96V32c0-17.7 14.3-32 32-32zM0 192H448V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V192zm80 64c-8.8 0-16 7.2-16 16v64c0 8.8 7.2 16 16 16H368c8.8 0 16-7.2 16-16V272c0-8.8-7.2-16-16-16H80z" />
-            </svg>
-          </span>
-          <span class="my-auto">مشخصات کلی</span>
-        </div>
-        <div class="border-2 border-slate-100 my-6 p-3 rounded-lg text-xs font-bold flex">
-          <span class="border-2 border-sky-600 text-blue-600 p-1 rounded-xl text-sm mx-2 w-fit">
-            <svg
-              class="w-2 h-4"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 192 512"
-            >
-              <path d="M48 80a48 48 0 1 1 96 0A48 48 0 1 1 48 80zM0 224c0-17.7 14.3-32 32-32H96c17.7 0 32 14.3 32 32V448h32c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H64V256H32c-17.7 0-32-14.3-32-32z" />
-            </svg>
-          </span>
-          <span class="my-auto">سایر مشخصات</span>
-        </div>
-        <div>
-          <div class="flex">
-            <div class="bg-stone-50 p-4 w-44 rounded-xl text-xs">
-              وزن بسته بندی
+          <div class="text-sm font-semibold flex">
+            <span class="m-2 border-2 border-black p-2 rounded-lg text-sm w-fit">
+              <svg
+                class="w-3"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 448 512"
+              >
+                <path d="M128 0c17.7 0 32 14.3 32 32V64H288V32c0-17.7 14.3-32 32-32s32 14.3 32 32V64h48c26.5 0 48 21.5 48 48v48H0V112C0 85.5 21.5 64 48 64H96V32c0-17.7 14.3-32 32-32zM0 192H448V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V192zm80 64c-8.8 0-16 7.2-16 16v64c0 8.8 7.2 16 16 16H368c8.8 0 16-7.2 16-16V272c0-8.8-7.2-16-16-16H80z" />
+              </svg>
+            </span>
+            <span class="my-auto">مشخصات کلی</span>
+          </div>
+          <div class="border-2 border-slate-100 shadow-md my-6 p-3 rounded-lg text-xs font-bold flex">
+            <span class="border-2 border-sky-600 text-blue-600 p-1 rounded-xl text-sm mx-2 w-fit">
+              <svg
+                class="w-2 h-4"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 192 512"
+              >
+                <path d="M48 80a48 48 0 1 1 96 0A48 48 0 1 1 48 80zM0 224c0-17.7 14.3-32 32-32H96c17.7 0 32 14.3 32 32V448h32c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H64V256H32c-17.7 0-32-14.3-32-32z" />
+              </svg>
+            </span>
+            <span class="my-auto">سایر مشخصات</span>
+          </div>
+          <div>
+            <div class="flex">
+              <div class="shadow-md p-4 w-44 rounded-xl text-xs">
+                وزن بسته بندی
+              </div>
+              <div class="mx-4 shadow-md w-full p-4 rounded-xl text-xs">
+                <div>۲۵۰ گرم</div>
+                <div>۵۰۰ گرم</div>
+                <div>۷۰۰ گرم</div>
+              </div>
             </div>
-            <div class="mx-4 w-full p-4 rounded-xl text-xs">
-              <div>۲۵۰ گرم</div>
-              <div>۵۰۰ گرم</div>
-              <div>۷۰۰ گرم</div>
+            <div class="flex mt-1">
+              <div class="shadow-md p-4 w-44 rounded-xl text-xs">آسیاب</div>
+              <div class="shadow-md mx-4 w-full p-4 rounded-xl text-xs">
+                <div>اسپرسو خانگی</div>
+                <div>نیمه صنعتی</div>
+                <div>تجاری</div>
+              </div>
             </div>
           </div>
-          <div class="flex mt-1">
-            <div class="bg-stone-50 p-4 w-44 rounded-xl text-xs">آسیاب</div>
-            <div class="mx-4 w-full p-4 rounded-xl text-xs">
-              <div>اسپرسو خانگی</div>
-              <div>نیمه صنعتی</div>
-              <div>تجاری</div>
-            </div>
-          </div>
-        </div>
-      </div>`;
+        </div>`;
   };
   const handlecComments = () => {
     const explain = document.getElementById("explain");
@@ -204,7 +204,7 @@ const ShowProduct = () => {
           <span class="my-auto text-xs">نظرات کاربران</span>
         </div>
         <div class="md:flex">
-          <div class="md:w-1/2 h-auto my-8 rounded-xl border-2 border-slate-100 p-4 text-xs leading-5">
+          <div class="md:w-1/2 h-auto my-8 rounded-xl border-2 border-slate-100 shadow-md p-4 text-xs leading-5">
             <p>
               لطفا پیش از ارسال نظر، خلاصه قوانین زیر را مطالعه کنید:
               <br />
@@ -229,24 +229,24 @@ const ShowProduct = () => {
           </div>
           <div class="md:p-6 md:px-6 text-xs md:w-1/2">
             <div>دیدگاه خود را بنویسید</div>
-            <div class="h-fit bg-stone-100 mt-6 rounded-md">
+            <div class="h-fit bg-stone-100 shadow-md mt-6 rounded-md">
               <div class="p-6 leading-6">
                 <p>
                   برای ثبت دیدگاه، لازم است ابتدا وارد حساب کاربری خود شوید. اگر
                   این محصول را قبلا از این فروشگاه خریده باشید، دیدگاه شما به
                   عنوان مالک محصول ثبت خواهد شد.
                 </p>
-                <button class="mt-4 bg-stone-500 text-white p-2 font-bold rounded-lg">
+                <button class="mt-4 w-full text-center md:text-start md:w-auto bg-stone-500 text-white p-2 font-bold rounded-lg">
                   افزودن دیدگاه جدید
                 </button>
               </div>
             </div>
           </div>
         </div>
-        <div class="flex justify-between mt-6">
-          <div class="text-xs font-bold">
+        <div class="md:flex justify-between mt-6">
+          <div class="text-xs font-bold my-4 md:my-0">
             <span>نقد و بررسی ها</span>
-            <span class="bg-stone-100 p-2 rounded-lg md:mx-3">۲</span>
+            <span class="bg-stone-100 shadow-md p-2 rounded-lg md:mx-3">۲</span>
           </div>
           <div class="text-xs font-semibold flex">
             <span class="border-2 border-black p-1 rounded-lg w-fit">
@@ -264,8 +264,8 @@ const ShowProduct = () => {
           </div>
         </div>
         <hr class="my-3" />
-        <div class="w-full h-fit rounded-xl border-2 border-slate-100 p-4">
-          <div class="w-full h-60 md:h-52 rounded-xl border-2 border-slate-100 p-4 my-4">
+        <div class="w-full h-fit rounded-xl border-2 border-slate-100 shadow-md p-4">
+          <div class="w-full h-60 md:h-52 rounded-xl border-2 border-slate-100 shadow-md p-4 my-4">
             <div class="text-xs font-semibold flex">
               <span class="border-2 border-black p-1 rounded-lg w-fit h-6 my-auto">
                 <svg
@@ -300,15 +300,15 @@ const ShowProduct = () => {
             </div>
             <div class="flex text-xs font-light mt-4 float-left gap-1">
               <span class="mx-2">آیا این دیدگاه مفید بود؟</span>
-              <div class="border-2 border-slate-100 p-1 w-20 text-center rounded-lg">
+              <div class="border-2 border-slate-100 shadow-md p-1 w-20 text-center rounded-lg">
                 ۰ بله
               </div>
-              <div class="border-2 border-slate-100 p-1 w-20 text-center rounded-lg">
+              <div class="border-2 border-slate-100 shadow-md p-1 w-20 text-center rounded-lg">
                 ۰ خیر
               </div>
             </div>
           </div>
-          <div class="w-full h-60 md:h-52 rounded-xl border-2 border-slate-100 p-4 my-4">
+          <div class="w-full h-60 md:h-52 rounded-xl border-2 border-slate-100 shadow-md p-4 my-4">
             <div class="text-xs font-semibold flex">
               <span class="border-2 border-black p-1 rounded-lg w-fit">
                 <svg
@@ -334,10 +334,10 @@ const ShowProduct = () => {
             </div>
             <div class="flex text-xs font-light mt-4 float-left gap-1">
               <span class="mx-2">آیا این دیدگاه مفید بود؟</span>
-              <div class="border-2 border-slate-100 p-1 w-20 text-center rounded-lg">
+              <div class="border-2 border-slate-100 shadow-md p-1 w-20 text-center rounded-lg">
                 ۰ بله
               </div>
-              <div class="border-2 border-slate-100 p-1 w-20 text-center rounded-lg">
+              <div class="border-2 border-slate-100 shadow-md p-1 w-20 text-center rounded-lg">
                 ۰ خیر
               </div>
             </div>
@@ -440,8 +440,8 @@ const ShowProduct = () => {
 
   return (
     <div className="container m-4">
-      <div className="lg:flex border-2 border-slate-100 rounded-xl p-4">
-        <div className="bg-white w-full lg:w-96 h-96 py-4 lg:py-0 rounded-xl border-2 border-slate-100">
+      <div className="lg:flex border-2 border-slate-100 shadow-md rounded-xl p-4">
+        <div className="bg-white shadow-md w-full lg:w-96 h-96 py-4 lg:py-0 rounded-xl border-2 border-slate-100">
           <img className="w-full h-72" src={selectedProduct.image} alt="" />
           <div className="flex mt-8 gap-4 px-3 float-left">
             <FontAwesomeIcon
@@ -484,7 +484,7 @@ const ShowProduct = () => {
                 <div
                   key={weight}
                   onClick={() => handleWeightClick(weight)}
-                  className={`text-black text-xs p-2 rounded-lg cursor-pointer bg-stone-100 hover:bg-green-700 hover:text-white transition-all ${
+                  className={`text-black text-xs p-2 rounded-lg cursor-pointer shadow-md hover:bg-green-700 hover:text-white transition-all ${
                     selectedWeight === weight ? "selected" : ""
                   }`}
                 >
@@ -497,7 +497,7 @@ const ShowProduct = () => {
             <h2 className="font-bold my-2">آسیاب</h2>
             <div className="max-w-96 sm:mx-24">
               <select
-                className="w-46 border-2 border-slate-100 p-2 rounded-xl cursor-pointer focus:outline-none"
+                className="w-46 border-2 border-slate-100 shadow-md p-2 rounded-xl cursor-pointer focus:outline-none"
                 value={selectedEqs}
                 onChange={handleEqsChange}
               >
@@ -510,10 +510,10 @@ const ShowProduct = () => {
           </div>
           <div className="lg:flex my-6">
             <div className="flex">
-              <div className="text-center border-2 w-full lg:w-fit border-slate-100 p-3 py-5 rounded-s-lg text-sm">
+              <div className="text-center border-2 w-full lg:w-fit border-slate-100 shadow-md p-3 py-5 rounded-s-lg text-sm">
                 {selectedProductQty}
               </div>
-              <div className="text-center border-2 border-slate-100 p-3 rounded-e-lg text-sm">
+              <div className="text-center border-2 border-slate-100 shadow-md p-3 rounded-e-lg text-sm">
                 <div>
                   <button
                     onClick={() => handleIncrement(selectedProduct.id)}
@@ -534,12 +534,12 @@ const ShowProduct = () => {
             </div>
             <div>
               <div className="flex sm:mx-4 mx-2 text-sm">
-                <div className="bg-green-700 text-white p-2 h-fit rounded-s-lg my-auto">
+                <div className="bg-green-700 shadow-md text-white p-2 h-fit rounded-s-lg my-auto">
                   <FontAwesomeIcon icon={faCartShopping} />
                 </div>
                 <button
                   onClick={() => handleAddToCart(selectedProduct)}
-                  className={`w-full text-xs sm:text-sm my-4 border-1 rounded-e-lg p-2 text-white cursor-pointer ${
+                  className={`w-full text-xs sm:text-sm my-4 border-1 rounded-e-lg p-2 shadow-md text-white cursor-pointer ${
                     isButtonDisabled ? "bg-gray-600" : "bg-green-800"
                   }`}
                   disabled={isButtonDisabled || selectedProductQty >= 1}
@@ -581,27 +581,27 @@ const ShowProduct = () => {
           </div>
           <div className="flex justify-between gap-4 p-6">
             <div className="flex text-xs">
-              <div className="border-2 border-slate-100 p-2 rounded-xl mx-4 cursor-pointer hover:bg-sky-500 hover:text-white transition-all">
+              <div className="border-2 border-slate-100 shadow-md p-2 rounded-xl mx-4 cursor-pointer hover:bg-sky-500 hover:text-white transition-all">
                 <FontAwesomeIcon className="mx-2" icon={faCodeCompare} />
                 <button>مقایسه</button>
               </div>
-              <div className="border-2 border-slate-100 p-2 rounded-xl cursor-pointer hover:bg-sky-500 hover:text-white transition-all">
+              <div className="border-2 border-slate-100 shadow-md p-2 rounded-xl cursor-pointer hover:bg-sky-500 hover:text-white transition-all">
                 <FontAwesomeIcon className="mx-2" icon={faBookmark} />
                 <button>افزودن به علاقه مندی ها</button>
               </div>
             </div>
           </div>
           <div className="text-xs">
-            <div className="border-2 border-slate-100 m-3 px-4 p-3 rounded-xl">
+            <div className="border-2 border-slate-100 shadow-md m-3 px-4 p-3 rounded-xl">
               تضمین بهترین قیمت
             </div>
-            <div className="border-2 border-slate-100 m-3 px-4 p-2 rounded-xl">
+            <div className="border-2 border-slate-100 shadow-md m-3 px-4 p-2 rounded-xl">
               ضمانت اصل بودن
             </div>
-            <div className="border-2 border-slate-100 m-3 px-4 p-2 rounded-xl">
+            <div className="border-2 border-slate-100 shadow-md m-3 px-4 p-2 rounded-xl">
               تحویل اکسپرس
             </div>
-            <div className="border-2 border-slate-100 m-3 px-4 p-2 rounded-xl">
+            <div className="border-2 border-slate-100 shadow-md m-3 px-4 p-2 rounded-xl">
               بسته بندی زیبا
             </div>
           </div>
@@ -611,7 +611,7 @@ const ShowProduct = () => {
         <div
           id="explain"
           onClick={handleExplain}
-          className="bg-sky-400 p-3 rounded-e-full rounded-tr-full cursor-pointer transition-all"
+          className="bg-sky-400 shadow-md p-3 rounded-e-full rounded-tr-full cursor-pointer transition-all"
         >
           <div className="flex">
             <span>
@@ -626,7 +626,7 @@ const ShowProduct = () => {
         <div
           id="comments"
           onClick={handlecComments}
-          className="bg-slate-200 text-black p-3 rounded-full cursor-pointer transition-all"
+          className="bg-slate-200 shadow-md text-black p-3 rounded-full cursor-pointer transition-all"
         >
           <div className="flex">
             <span>
@@ -641,7 +641,7 @@ const ShowProduct = () => {
         <div
           id="questions"
           onClick={handleQuestion}
-          className="bg-slate-200 text-black p-3 rounded-full cursor-pointer transition-all"
+          className="bg-slate-200 shadow-md text-black p-3 rounded-full cursor-pointer transition-all"
         >
           <div className="flex">
             <span>
@@ -656,7 +656,7 @@ const ShowProduct = () => {
         <div
           id="censure"
           onClick={handleCensure}
-          className="bg-slate-200 text-black p-3 rounded-s-full rounded-tl-full cursor-pointer transition-all"
+          className="bg-slate-200 shadow-md text-black p-3 rounded-s-full rounded-tl-full cursor-pointer transition-all"
         >
           <div className="flex">
             <span>
@@ -671,7 +671,7 @@ const ShowProduct = () => {
       </div>
       <div
         id="box"
-        className="w-full h-fit my-8 rounded-xl border-2 border-slate-100 p-4"
+        className="w-full h-fit my-8 rounded-xl border-2 border-slate-100 shadow-md p-4"
       >
         <div className="w-full h-full rounded-xl">
           <div className="text-sm font-semibold flex">
@@ -686,7 +686,7 @@ const ShowProduct = () => {
             </span>
             <span className="my-auto">مشخصات کلی</span>
           </div>
-          <div className="border-2 border-slate-100 my-6 p-3 rounded-lg text-xs font-bold flex">
+          <div className="border-2 border-slate-100 shadow-md my-6 p-3 rounded-lg text-xs font-bold flex">
             <span className="border-2 border-sky-600 text-blue-600 p-1 rounded-xl text-sm mx-2 w-fit">
               <svg
                 className="w-2 h-4"
@@ -700,20 +700,18 @@ const ShowProduct = () => {
           </div>
           <div>
             <div className="flex">
-              <div className="bg-stone-50 p-4 w-44 rounded-xl text-xs">
+              <div className="shadow-md p-4 w-44 rounded-xl text-xs">
                 وزن بسته بندی
               </div>
-              <div className="mx-4 w-full p-4 rounded-xl text-xs">
+              <div className="mx-4 shadow-md w-full p-4 rounded-xl text-xs">
                 <div>۲۵۰ گرم</div>
                 <div>۵۰۰ گرم</div>
                 <div>۷۰۰ گرم</div>
               </div>
             </div>
             <div className="flex mt-1">
-              <div className="bg-stone-50 p-4 w-44 rounded-xl text-xs">
-                آسیاب
-              </div>
-              <div className="mx-4 w-full p-4 rounded-xl text-xs">
+              <div className="shadow-md p-4 w-44 rounded-xl text-xs">آسیاب</div>
+              <div className="shadow-md mx-4 w-full p-4 rounded-xl text-xs">
                 <div>اسپرسو خانگی</div>
                 <div>نیمه صنعتی</div>
                 <div>تجاری</div>

@@ -99,7 +99,7 @@ const Header = () => {
         </div>
         {cart.length === 0 ? (
           <div>
-            <div className="mx-auto mt-10 bg-slate-200 w-full h-fit p-4 rounded-lg">
+            <div className="mx-auto mt-10 bg-slate-50 shadow-md w-full h-fit p-4 rounded-lg">
               <div className="text-center">
                 <div className="my-6">
                   <FontAwesomeIcon className="h-12" icon={faCartShopping} />
@@ -108,7 +108,7 @@ const Header = () => {
               </div>
             </div>
             <NavLink onClick={() => handleCloseCartMenu()} to="/products">
-              <div className="text-center my-6 main-bg p-2 rounded-lg text-white">
+              <div className="text-center my-6 main-bg p-2 rounded-lg text-white shadow-md">
                 بازگشت به فروشگاه
               </div>
             </NavLink>
@@ -159,7 +159,7 @@ const Header = () => {
                   </div>
                 ))}
             </div>
-            <div className="fixed h-fit w-64 bg-slate-50 p-2">
+            <div className="fixed h-fit w-64 shadow-md p-2 bottom-24">
               <div className="flex justify-between ">
                 <div>جمع جزء:</div>
                 <div className="flex">
@@ -175,14 +175,14 @@ const Header = () => {
                 <Link
                   to="/cart"
                   onClick={() => handleCloseCartMenu()}
-                  className="w-fit p-2 bg-slate-200 rounded-lg font-bold text-xs"
+                  className="w-fit p-2 shadow-md hover:bg-sky-500 transition-all hover:text-white rounded-lg font-bold text-xs"
                 >
                   مشاهده سبد خرید
                 </Link>
 
                 <div
                   onClick={() => handleCloseCartMenu()}
-                  className="w-fit p-2 bg-slate-200 rounded-lg font-bold text-xs cursor-pointer"
+                  className="w-fit p-2 shadow-md hover:bg-sky-500 transition-all hover:text-white rounded-lg font-bold text-xs cursor-pointer"
                 >
                   تسویه حساب
                 </div>
@@ -201,7 +201,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <div className="bg-slate-100 w-full h-auto p-4 text-sm font-semibold">
+      <div className="bg-gray-50 w-full h-auto text-sm font-semibold shadow-lg">
         <div className="container px-6">
           <div className="block md:flex">
             <Link to="/cartproject" className="cursor-pointer mx-4">
@@ -212,7 +212,7 @@ const Header = () => {
               />
             </Link>
             <div className="m-auto">
-              <div className="mt-10 md:mx-0 mx-auto max-w-96 lg:w-96 bg-white flex rounded-md">
+              <div className="mt-10 md:mx-0 mx-auto max-w-96 lg:w-96 bg-white shadow-md flex rounded-md">
                 <div className="m-2">
                   <FontAwesomeIcon icon={faMagnifyingGlass} />
                 </div>
@@ -274,18 +274,21 @@ const Header = () => {
                 <div>
                   <FontAwesomeIcon icon={faUser} />
                 </div>
-                <div>ورود / عضویت</div>
+                <div className="font-light">ورود / عضویت</div>
               </div>
 
-              <button onClick={() => handleOpenCloseCartMenu()}>
+              <button
+                className="flex"
+                onClick={() => handleOpenCloseCartMenu()}
+              >
                 <FontAwesomeIcon icon={faCartShopping} />
-                <span className="absolute -m-2 bg-gray-700 w-fit text-xs px-1 text-white rounded-full">
+                <span className="absolute -m-2 bg-gray-700 text-xs px-1 text-white rounded-full">
                   {cart.length}
                 </span>
               </button>
             </div>
           </div>
-          <div className="pt-12 flex justify-between">
+          <div className="pt-10 py-4 flex justify-between text-xs font-bold">
             <div className="hidden md:flex space-x-4 space-x-reverse">
               <div>
                 <NavLink to="/cartproject">خانه</NavLink>
@@ -360,8 +363,8 @@ const Header = () => {
               </div>
             </div>
 
-            <div className="flex space-x-4 space-x-reverse">
-              <div>09169778006</div>
+            <div className="flex space-x-4 space-x-reverse text-sm">
+              <div>۰۹۱۶۹۷۷۸۰۰۶</div>
               <div className="cursor-pointer">
                 <FontAwesomeIcon icon={faPhoneVolume} />
               </div>

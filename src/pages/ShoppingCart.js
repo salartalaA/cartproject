@@ -44,26 +44,28 @@ const ShoppingCart = () => {
   const EmptyCartMessage = () => (
     <div>
       <CartHeader />
-      <div className="main-bg w-fit p-2 my-8 rounded-lg text-sm">
+      <div className="main-bg w-fit p-2 my-8 rounded-lg text-sm shadow-md">
         <button>
           <span className="text-white"> سبد خرید</span>
-          <span className="bg-white p-1 rounded-xl">{cart.length}</span>
+          <span className="bg-white shadow-md p-1 rounded-xl mx-1">
+            {cart.length}
+          </span>
         </button>
       </div>
-      <div className="border-2 border-slate-200 w-full h-auto p-3 rounded-xl">
+      <div className="border-2 border-slate-200 shadow-md w-full h-auto p-3 rounded-xl">
         <div className="text-sky-500 text-sm font-bold">
           <FontAwesomeIcon className="mx-3" icon={faCircleInfo} />
           سبد خرید شما در حال حاضر خالی است!
         </div>
       </div>
-      <div className="mx-auto border-2 border-slate-200 rounded-xl w-fit p-2 mt-8 text-xs font-bold">
+      <div className="mx-auto border-2 border-slate-200 shadow-md rounded-xl w-fit p-2 mt-8 text-xs font-bold">
         <Link to="/products">بازگشت به فروشگاه</Link>
       </div>
     </div>
   );
 
   const CartSummary = ({ cart }) => (
-    <div className="border-2 border-slate-200 rounded-xl my-4 md:my-0 md:mx-4 w-full md:w-1/4 h-fit p-3">
+    <div className="border-2 border-slate-200 shadow-md rounded-xl my-4 md:my-0 md:mx-4 w-full md:w-1/4 h-fit p-3">
       <div className="text-xs mx-6 my-2">جمع کل سبد خرید</div>
       <div className="flex justify-between mx-2 text-xs my-6">
         <div>جمع جزء</div>
@@ -85,15 +87,15 @@ const ShoppingCart = () => {
           تومان
         </div>
       </div>
-      <div className="text-center w-full main-bg font-bold text-white p-3 text-xs rounded-lg cursor-pointer">
+      <div className="text-center shadow-md w-full main-bg font-bold text-white p-3 text-xs rounded-lg cursor-pointer">
         <button>ادامه جهت تسویه حساب</button>
       </div>
-      <div className="text-center w-full my-2 main-bg font-bold text-white p-3 text-xs rounded-lg cursor-pointer">
+      <div className="text-center shadow-md w-full my-2 main-bg font-bold text-white p-3 text-xs rounded-lg cursor-pointer">
         <button>پیش فاکتور سبد خرید</button>
       </div>
       <div
         onClick={handleClearCart}
-        className="bg-red-600 hover:bg-red-700 p-2 rounded-lg text-white w-full text-center text-xs font-bold transition-all cursor-pointer"
+        className="bg-red-600 hover:bg-red-700 shadow-md p-2 rounded-lg text-white w-full text-center text-xs font-bold transition-all cursor-pointer"
       >
         <button>پاکسازی سبد خرید</button>
       </div>
@@ -103,7 +105,7 @@ const ShoppingCart = () => {
   const CartItem = ({ product, handleRemoveFromCart }) => (
     <div
       key={product.id}
-      className="sm:flex justify-between md:px-14 border-2 border-slate-100 p-4 sm:leading-6 leading-10 text-xs font-semilight rounded-b-xl"
+      className="sm:flex justify-between md:px-14 border-2 border-slate-100 shadow-md p-4 sm:leading-6 leading-10 text-xs font-semilight rounded-b-xl"
     >
       <div className="sm:flex">
         <div
@@ -151,9 +153,9 @@ const ShoppingCart = () => {
   );
 
   const CartItems = ({ cart }) => (
-    <div className="border-2 border-gray-100 rounded-xl h-full p-6 sm:w-3/4 w-full">
-      <div className="border-2 border-gray-100 rounded-xl">
-        <div className="hidden sm:flex justify-between border-2 border-gray-100 p-3 rounded-t-xl md:px-24 text-xs font-bold">
+    <div className="border-2 border-gray-100 shadow-md rounded-xl h-full p-6 sm:w-3/4 w-full">
+      <div className="border-2 border-gray-100 shadow-md rounded-xl">
+        <div className="hidden sm:flex justify-between border-2 border-gray-100 shadow-md p-3 rounded-t-xl md:px-24 text-xs font-bold">
           <div>محصول</div>
           <div>قیمت</div>
           <div>تعداد</div>
@@ -167,11 +169,11 @@ const ShoppingCart = () => {
           />
         ))}
       </div>
-      <div className="w-full sm:w-fit my-4 text-center font-semibold h-fit p-2 sm:m-6 main-bg rounded-lg text-white text-xs">
+      <div className="w-full shadow-md sm:w-fit my-4 text-center font-semibold h-fit p-2 sm:m-6 main-bg rounded-lg text-white text-xs">
         به روزرسانی سبد خرید
       </div>
-      <div className="w-full h-32 border-2 border-slate-200 rounded-xl p-3 md:p-6 text-sm">
-        <div className="w-full h-full border-2 border-slate-200 rounded-xl">
+      <div className="w-full h-32 border-2 border-slate-200 shadow-md rounded-xl p-3 md:p-6 text-sm">
+        <div className="w-full h-full border-2 border-slate-200 shadow-md rounded-xl">
           <div className="m-5">
             <input className="focus:outline-none" placeholder="کد تخفیف" />
             <div className="w-fit float-left main-bg h-fit rounded-lg p-2 mt-3 sm:mt-0 text-white">
@@ -193,7 +195,7 @@ const ShoppingCart = () => {
         <div key={label} className="py-4 sm:py-0">
           <div>
             <FontAwesomeIcon
-              className="main-text border-2 border-slate-200 p-2 rounded-xl cursor-pointer"
+              className="main-text border-2 border-slate-200 shadow-md p-2 rounded-xl cursor-pointer"
               icon={icon}
             />
           </div>

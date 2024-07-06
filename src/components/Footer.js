@@ -10,25 +10,25 @@ const Footer = () => {
     <footer className="w-full h-fit bg-footer mt-4 text-sm font-semilight leading-6">
       <div className="container pt-4 grid grid-cols-1 text-center md:text-start sm:grid-cols-3 md:grid-cols-4 text-white px-6 gap-6">
         {/* Quick Links */}
-        <div>
+        <div className="mx-auto md:mx-0">
           <h4 className="text-yellow-300 mb-4">دسترسی سریع</h4>
           <ul className="space-y-2">
-            <li className="cursor-pointer w-fit">تماس با ما</li>
-            <li className="cursor-pointer w-fit">وبلاگ</li>
-            <li className="cursor-pointer w-fit">شورتکد</li>
-            <li className="cursor-pointer w-fit">پیگیری سفارش</li>
-            <li className="cursor-pointer w-fit">فروشگاه</li>
+            <li className="cursor-pointer w-fit mx-auto md:mx-0">تماس با ما</li>
+            <li className="cursor-pointer w-fit mx-auto md:mx-0">وبلاگ</li>
+            <li className="cursor-pointer w-fit mx-auto md:mx-0">شورتکد</li>
+            <li className="cursor-pointer w-fit mx-auto md:mx-0">پیگیری سفارش</li>
+            <li className="cursor-pointer w-fit mx-auto md:mx-0">فروشگاه</li>
           </ul>
         </div>
 
         {/* Customer Services */}
-        <div>
+        <div className="mx-auto md:mx-0">
           <h4 className="text-yellow-300 mb-4">خدمات مشتریان</h4>
           <ul className="space-y-2">
-            <li className="cursor-pointer w-fit">سوالات متداول</li>
-            <li className="cursor-pointer w-fit">رویه بازگردانی کالا</li>
-            <li className="cursor-pointer w-fit">حریم خصوصی</li>
-            <li className="cursor-pointer w-fit">تماس با ما</li>
+            <li className="cursor-pointer w-fit mx-auto md:mx-0">سوالات متداول</li>
+            <li className="cursor-pointer w-fit mx-auto md:mx-0">رویه بازگردانی کالا</li>
+            <li className="cursor-pointer w-fit mx-auto md:mx-0">حریم خصوصی</li>
+            <li className="cursor-pointer w-fit mx-auto md:mx-0">تماس با ما</li>
           </ul>
         </div>
 

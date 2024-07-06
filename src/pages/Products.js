@@ -20,7 +20,7 @@ const Products = () => {
   }, [dispatch]);
 
   const CategoryList = () => (
-    <div className="border-2 border-slate-200 h-auto w-full mt-10 rounded-xl text-xs p-3 font-semibold">
+    <div className="border-2 border-slate-200 shadow-md h-auto w-full mt-10 rounded-xl text-xs p-3 font-semibold">
       <div>دسته های محصولات</div>
       <hr className="my-4" />
       <div className="leading-9">
@@ -45,7 +45,7 @@ const Products = () => {
   );
 
   const BrandList = () => (
-    <div className="border-2 border-slate-200 h-auto w-full my-10 rounded-xl text-xs p-3 font-semibold">
+    <div className="border-2 border-slate-200 shadow-md h-auto w-full my-10 rounded-xl text-xs p-3 font-semibold">
       <div>برندها</div>
       <hr className="my-4" />
       <div className="grid grid-cols-2 mt-12 mx-auto w-fit text-center gap-3">
@@ -93,7 +93,7 @@ const Products = () => {
         ].map((brand) => (
           <div
             key={brand.name}
-            className="max-w-24 border-2 border-slate-200 p-2 rounded-xl"
+            className="max-w-24 border-2 border-slate-200 shadow-md p-2 rounded-xl"
           >
             <div>
               <img src={brand.src} alt={brand.name} />
@@ -102,7 +102,7 @@ const Products = () => {
           </div>
         ))}
       </div>
-      <div className="border-2 border-slate-200 p-2 max-w-full rounded-xl mt-3 text-center">
+      <div className="border-2 border-slate-200 shadow-md p-2 max-w-full rounded-xl mt-3 text-center">
         <div className="w-24 mx-auto">
           <img
             src="https://28coffee.ir/wp-content/uploads/2024/04/unique-life.jpg"
@@ -115,7 +115,7 @@ const Products = () => {
   );
 
   const ColorFilter = () => (
-    <div className="border-2 border-slate-200 h-auto w-full mt-10 rounded-xl text-xs p-3 font-semibold">
+    <div className="border-2 border-slate-200 shadow-md h-auto w-full mt-10 rounded-xl text-xs p-3 font-semibold">
       <div>فیلتر بر اساس رنگ</div>
       <hr className="my-4" />
       <div className="flex flex-wrap mx-2 cursor-pointer">
@@ -132,7 +132,7 @@ const Products = () => {
             key={color}
             className="border-2 border-slate-100 p-1 w-fit rounded-xl"
           >
-            <div className={`w-6 h-6 ${color} rounded-full`}></div>
+            <div className={`w-6 h-6 ${color} shadow-md rounded-full`}></div>
           </div>
         ))}
       </div>
@@ -140,7 +140,7 @@ const Products = () => {
   );
 
   const SizeFilter = () => (
-    <div className="border-2 border-slate-200 h-auto w-full mt-10 rounded-xl text-xs p-3 font-semibold">
+    <div className="border-2 border-slate-200 shadow-md h-auto w-full mt-10 rounded-xl text-xs p-3 font-semibold">
       <div>فیلتر بر اساس سایز</div>
       <hr className="my-4" />
       <div className="mx-2">
@@ -159,7 +159,7 @@ const Products = () => {
   );
 
   const RatingFilter = () => (
-    <div className="border-2 border-slate-200 h-auto w-full mt-10 rounded-xl text-xs p-3 font-semibold">
+    <div className="border-2 border-slate-200 shadow-md h-auto w-full mt-10 rounded-xl text-xs p-3 font-semibold">
       <div>میانگین رتبه</div>
       <hr className="my-4" />
       <div className="mx-2 p-1">
@@ -185,7 +185,7 @@ const Products = () => {
   const ProductCard = ({ product }) => (
     <div
       key={product.id}
-      className="bg-gray-50 border-2 border-slate-200 w-full sm:w-fit rounded-lg"
+      className="border-2 border-slate-200 shadow-md w-full sm:w-fit rounded-lg"
     >
       <Link to={`/products/${product.id}`}>
         <div className="float-left p-1 text-xs font-bold bg-yellow-400 w-fit text-white rounded-s-full rounded-tl-full">
