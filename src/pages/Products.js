@@ -6,9 +6,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowsLeftRight,
   faCartShopping,
+  faFilter,
   faHeart,
   faStar,
   faStore,
+  faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 
 const Products = () => {
@@ -149,10 +151,26 @@ const Products = () => {
     </div>
   ));
 
+  const handleOpenCloseFilterMenu = () => {
+    const filterMenu = document.getElementById("filter-menu");
+    filterMenu.classList.toggle("hidden");
+  };
+
+  const handleCloseFilterMenu = () => {
+    const filterMenu = document.getElementById("filter-menu");
+    filterMenu.classList.add("hidden");
+  };
+
   return (
     <div className="container">
+      <div
+        onClick={handleOpenCloseFilterMenu}
+        className="bottom-6 left-6 sticky md:hidden border-2 border-yellow-600 text-amber-400 p-2 rounded-lg bg-white shadow-md"
+      >
+        <FontAwesomeIcon icon={faFilter} />
+      </div>
       <div className="mx-12 mt-4 text-xs font-semilight bg-gray-50 w-auto p-2 rounded-lg">
-        خانه / فروشگاه
+        <Link to="/cartproject">خانه</Link> / فروشگاه
       </div>
       <div className="md:flex mx-10 mt-4">
         <div className="sm:w-96 hidden md:block">
@@ -240,7 +258,16 @@ const Products = () => {
             )}
           </div>
         </div>
-        <div className="sm:w-96 block md:hidden">
+        <div
+          id="filter-menu"
+          className="absolute w-3/4 top-0 bg-white z-[100] right-0 p-4 rounded-lg hidden shadow-md"
+        >
+          <span
+            onClick={handleCloseFilterMenu}
+            className="float-right border-slate-300 border-2 hover:bg-red-600 hover:text-white hover:border-red-600 transition-all rounded-full p-1 cursor-pointer"
+          >
+            <FontAwesomeIcon icon={faXmark} />
+          </span>
           <FilterList
             title="دسته های محصولات"
             items={[

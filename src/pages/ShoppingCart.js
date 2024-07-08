@@ -129,7 +129,7 @@ const ShoppingCart = () => {
         </div>
         <div
           onClick={handleClearCart}
-          className="text-center shadow-md w-full my-2 bg-red-600 hover:bg-red-700 font-bold text-white p-3 text-xs rounded-lg cursor-pointer"
+          className="text-center shadow-md w-full my-2 bg-red-600 hover:bg-red-700 font-bold text-white p-3 text-xs rounded-lg cursor-pointer transition-all"
         >
           <button>پاکسازی سبد خرید</button>
         </div>

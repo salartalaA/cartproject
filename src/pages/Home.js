@@ -221,12 +221,12 @@ const Home = () => {
             />
           ))}
         </div>
-        <div className="m-3 my-6 leading-10 w-fit">
+        <div className="m-3 my-6 w-fit">
           <h2 className="font-bold text-xl">خرید قهوه از قهوه 28</h2>
           <p className="text-lg my-4 font-semibold">
             خرید انواع قهوه ها | قهوه اسپرسو | قهوه ترک | قهوه فوری | دانه قهوه
           </p>
-          <p>
+          <p className="text-sm font-bold leading-10">
             خرید قهوه نیاز به آموزش دارد. در قهوه 28 می توانید همه چیز را در
             مورد قهوه ها بیاموزید، سپس بنا به سلیقه خود قهوه ی مورد نظرتان را
             بخرید. قهوه های قهوه 28 به دو صورت عرضه می شوند، قهوه هایی که خودمان

@@ -236,7 +236,7 @@ const ShowProduct = () => {
                   این محصول را قبلا از این فروشگاه خریده باشید، دیدگاه شما به
                   عنوان مالک محصول ثبت خواهد شد.
                 </p>
-                <button class="mt-4 w-full text-center md:text-start md:w-auto bg-stone-500 text-white p-2 font-bold rounded-lg">
+                <button class="mt-4 w-full text-center md:text-start md:w-auto bg-stone-500 text-white p-2 font-bold rounded-lg shadow-md">
                   افزودن دیدگاه جدید
                 </button>
               </div>
