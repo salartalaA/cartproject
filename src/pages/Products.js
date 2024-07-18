@@ -196,43 +196,43 @@ const Products = () => {
             items={[
               {
                 name: "اسمگ",
-                src: "https://28coffee.ir/wp-content/uploads/2024/04/smeg.jpg",
+                src: "https://s5.ezgif.com/tmp/ezgif-5-1fe81b1571.webp",
               },
               {
                 name: "بارنی",
-                src: "https://28coffee.ir/wp-content/uploads/2024/04/barni.jpg",
+                src: "https://s5.ezgif.com/tmp/ezgif-5-133a8bb3da.webp",
               },
               {
                 name: "برویل",
-                src: "https://28coffee.ir/wp-content/uploads/2024/04/breville.jpg",
+                src: "https://s5.ezgif.com/tmp/ezgif-5-fc9d0492fb.webp",
               },
               {
                 name: "جی پاس",
-                src: "https://28coffee.ir/wp-content/uploads/2024/04/geepas.jpg",
+                src: "https://s5.ezgif.com/tmp/ezgif-5-e19b2f1259.webp",
               },
               {
                 name: "جیمیلای",
-                src: "https://28coffee.ir/wp-content/uploads/2024/04/gemilai.jpg",
+                src: "https://s5.ezgif.com/tmp/ezgif-5-3add6644d4.webp",
               },
               {
                 name: "داونگی",
-                src: "https://28coffee.ir/wp-content/uploads/2024/04/delonghi.jpg",
+                src: "https://s5.ezgif.com/tmp/ezgif-5-03b43c44c6.webp",
               },
               {
                 name: "فیلیپس",
-                src: "https://28coffee.ir/wp-content/uploads/2018/02/philips.png",
+                src: "https://s5.ezgif.com/tmp/ezgif-5-d28387238a.webp",
               },
               {
                 name: "لواک",
-                src: "https://28coffee.ir/wp-content/uploads/2024/04/luwak.jpg",
+                src: "https://s5.ezgif.com/tmp/ezgif-5-5fac552d50.webp",
               },
               {
                 name: "مباشی",
-                src: "https://28coffee.ir/wp-content/uploads/2024/04/mebashi.jpg",
+                src: "https://s5.ezgif.com/tmp/ezgif-5-05c81e2f96.webp",
               },
               {
                 name: "نوا",
-                src: "https://28coffee.ir/wp-content/uploads/2024/04/nova.jpg",
+                src: "https://s5.ezgif.com/tmp/ezgif-5-e4d5860979.webp",
               },
             ]}
           />
@@ -290,43 +290,43 @@ const Products = () => {
             items={[
               {
                 name: "اسمگ",
-                src: "https://28coffee.ir/wp-content/uploads/2024/04/smeg.jpg",
+                src: "https://s5.ezgif.com/tmp/ezgif-5-1fe81b1571.webp",
               },
               {
                 name: "بارنی",
-                src: "https://28coffee.ir/wp-content/uploads/2024/04/barni.jpg",
+                src: "https://s5.ezgif.com/tmp/ezgif-5-133a8bb3da.webp",
               },
               {
                 name: "برویل",
-                src: "https://28coffee.ir/wp-content/uploads/2024/04/breville.jpg",
+                src: "https://s5.ezgif.com/tmp/ezgif-5-fc9d0492fb.webp",
               },
               {
                 name: "جی پاس",
-                src: "https://28coffee.ir/wp-content/uploads/2024/04/geepas.jpg",
+                src: "https://s5.ezgif.com/tmp/ezgif-5-e19b2f1259.webp",
               },
               {
                 name: "جیمیلای",
-                src: "https://28coffee.ir/wp-content/uploads/2024/04/gemilai.jpg",
+                src: "https://s5.ezgif.com/tmp/ezgif-5-3add6644d4.webp",
               },
               {
                 name: "داونگی",
-                src: "https://28coffee.ir/wp-content/uploads/2024/04/delonghi.jpg",
+                src: "https://s5.ezgif.com/tmp/ezgif-5-03b43c44c6.webp",
               },
               {
                 name: "فیلیپس",
-                src: "https://28coffee.ir/wp-content/uploads/2018/02/philips.png",
+                src: "https://s5.ezgif.com/tmp/ezgif-5-d28387238a.webp",
               },
               {
                 name: "لواک",
-                src: "https://28coffee.ir/wp-content/uploads/2024/04/luwak.jpg",
+                src: "https://s5.ezgif.com/tmp/ezgif-5-5fac552d50.webp",
               },
               {
                 name: "مباشی",
-                src: "https://28coffee.ir/wp-content/uploads/2024/04/mebashi.jpg",
+                src: "https://s5.ezgif.com/tmp/ezgif-5-05c81e2f96.webp",
               },
               {
                 name: "نوا",
-                src: "https://28coffee.ir/wp-content/uploads/2024/04/nova.jpg",
+                src: "https://s5.ezgif.com/tmp/ezgif-5-e4d5860979.webp",
               },
             ]}
           />

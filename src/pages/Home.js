@@ -97,10 +97,8 @@ const Home = () => {
   const [isHovering, setIsHovering] = useState(false);
   const imageSrc =
     "https://28coffee.ir/wp-content/uploads/2023/02/01coffee28-group.webp";
-  const productSrc =
-    "https://28coffee.ir/wp-content/uploads/2024/06/IMG-20240619-WA0020-1-185x185.jpg";
-  const newProductSrc =
-    "https://28coffee.ir/wp-content/uploads/2024/05/IMG-20240506-WA0002-100x100.jpg";
+  const productSrc = "https://s5.ezgif.com/tmp/ezgif-5-49cb0774e9.webp";
+  const newProductSrc = "https://s5.ezgif.com/tmp/ezgif-5-e09c42a4a3.webp";
   const blogSrc = "https://28coffee.ir/wp-content/uploads/2023/02/113.65.svg";
 
   return (
@@ -170,7 +168,7 @@ const Home = () => {
               {[...Array(5)].map((_, index) => (
                 <ProductCard
                   key={index}
-                  src="https://28coffee.ir/wp-content/uploads/2024/07/IMG-20240706-WA0015-185x185.jpg"
+                  src="https://s5.ezgif.com/tmp/ezgif-5-d417f53906.webp"
                   price="1000000"
                   description="تیوارکس ۷۱۷۰"
                 />
@@ -198,7 +196,7 @@ const Home = () => {
           }
         >
           <img
-            src="https://28coffee.ir/wp-content/uploads/2023/02/Banner-telegram_coffee28-1536x445.png"
+            src="https://s5.ezgif.com/tmp/ezgif-5-b6c714e0e3.webp"
             alt="Telegram Banner"
           />
         </motion.div>
