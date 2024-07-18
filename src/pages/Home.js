@@ -6,6 +6,12 @@ import {
   faHeart,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import life from "../imgs/life.jpg";
+import espresso from "../imgs/espresso maker.webp";
+import instagram from "../imgs/instagram.webp";
+import tiva from "../imgs/tiva.jpg";
+import telegram from "../imgs/telegram.png";
+import moka from "../imgs/moka.jpg";
 
 const ImageItem = ({ src, alt }) => {
   const [isHovering, setIsHovering] = useState(false);
@@ -95,18 +101,13 @@ const NewProductCard = ({ src, price, description }) => (
 
 const Home = () => {
   const [isHovering, setIsHovering] = useState(false);
-  const imageSrc =
-    "https://28coffee.ir/wp-content/uploads/2023/02/01coffee28-group.webp";
-  const productSrc = "https://s5.ezgif.com/tmp/ezgif-5-49cb0774e9.webp";
-  const newProductSrc = "https://s5.ezgif.com/tmp/ezgif-5-e09c42a4a3.webp";
   const blogSrc = "https://28coffee.ir/wp-content/uploads/2023/02/113.65.svg";
-
   return (
     <div className="container">
       <div>
         <div className="block md:grid md:grid-cols-3">
           {[...Array(12)].map((_, index) => (
-            <ImageItem key={index} src={imageSrc} alt={`image-${index}`} />
+            <ImageItem key={index} src={espresso} alt={`image-${index}`} />
           ))}
         </div>
         <motion.div
@@ -128,10 +129,7 @@ const Home = () => {
               : { y: 0 }
           }
         >
-          <img
-            src="https://28coffee.ir/wp-content/uploads/2023/02/Banner-instegram_coffee28-1536x445.webp"
-            alt="Instagram Banner"
-          />
+          <img src={instagram} alt="Instagram Banner" />
         </motion.div>
         <div className="my-12">
           <div className="m-3 pb-4 flex justify-between">
@@ -146,7 +144,7 @@ const Home = () => {
               {[...Array(5)].map((_, index) => (
                 <ProductCard
                   key={index}
-                  src={productSrc}
+                  src={life}
                   price="1000000"
                   description="آسیاب یونیک لایف A 900"
                 />
@@ -168,7 +166,7 @@ const Home = () => {
               {[...Array(5)].map((_, index) => (
                 <ProductCard
                   key={index}
-                  src="https://s5.ezgif.com/tmp/ezgif-5-d417f53906.webp"
+                  src={tiva}
                   price="1000000"
                   description="تیوارکس ۷۱۷۰"
                 />
@@ -195,10 +193,7 @@ const Home = () => {
               : { y: 0 }
           }
         >
-          <img
-            src="https://s5.ezgif.com/tmp/ezgif-5-b6c714e0e3.webp"
-            alt="Telegram Banner"
-          />
+          <img src={telegram} alt="Telegram Banner" />
         </motion.div>
 
         <div className="m-6 flex justify-between">
@@ -213,7 +208,7 @@ const Home = () => {
           {[...Array(6)].map((_, index) => (
             <NewProductCard
               key={index}
-              src={newProductSrc}
+              src={moka}
               price="۴۹۰۰۰۰"
               description="موکاپات فانتزی"
             />

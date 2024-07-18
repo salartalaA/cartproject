@@ -12,6 +12,16 @@ import {
   faStore,
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
+import smeg from "../imgs/smeg.jpg";
+import barni from "../imgs/barni.jpg";
+import breville from "../imgs/breville.jpg";
+import geepas from "../imgs/geepas.jpg";
+import gemilai from "../imgs/gemilai.jpg";
+import delonghi from "../imgs/delonghi.jpg";
+import philips from "../imgs/philips.png";
+import luwak from "../imgs/luwak.jpg";
+import mebashi from "../imgs/mebashi.jpg";
+import uniqueLife from "../imgs/unique-life.jpg";
 
 const Products = () => {
   const { products } = useSelector((state) => state.product);
@@ -196,43 +206,43 @@ const Products = () => {
             items={[
               {
                 name: "اسمگ",
-                src: "https://s5.ezgif.com/tmp/ezgif-5-1fe81b1571.webp",
+                src: smeg,
               },
               {
                 name: "بارنی",
-                src: "https://s5.ezgif.com/tmp/ezgif-5-133a8bb3da.webp",
+                src: barni,
               },
               {
                 name: "برویل",
-                src: "https://s5.ezgif.com/tmp/ezgif-5-fc9d0492fb.webp",
+                src: breville,
               },
               {
                 name: "جی پاس",
-                src: "https://s5.ezgif.com/tmp/ezgif-5-e19b2f1259.webp",
+                src: geepas,
               },
               {
                 name: "جیمیلای",
-                src: "https://s5.ezgif.com/tmp/ezgif-5-3add6644d4.webp",
+                src: gemilai,
               },
               {
-                name: "داونگی",
-                src: "https://s5.ezgif.com/tmp/ezgif-5-03b43c44c6.webp",
+                name: "دلونگی",
+                src: delonghi,
               },
               {
                 name: "فیلیپس",
-                src: "https://s5.ezgif.com/tmp/ezgif-5-d28387238a.webp",
+                src: philips,
               },
               {
                 name: "لواک",
-                src: "https://s5.ezgif.com/tmp/ezgif-5-5fac552d50.webp",
+                src: luwak,
               },
               {
                 name: "مباشی",
-                src: "https://s5.ezgif.com/tmp/ezgif-5-05c81e2f96.webp",
+                src: mebashi,
               },
               {
                 name: "نوا",
-                src: "https://s5.ezgif.com/tmp/ezgif-5-e4d5860979.webp",
+                src: uniqueLife,
               },
             ]}
           />
@@ -290,43 +300,43 @@ const Products = () => {
             items={[
               {
                 name: "اسمگ",
-                src: "https://s5.ezgif.com/tmp/ezgif-5-1fe81b1571.webp",
+                src: smeg,
               },
               {
                 name: "بارنی",
-                src: "https://s5.ezgif.com/tmp/ezgif-5-133a8bb3da.webp",
+                src: barni,
               },
               {
                 name: "برویل",
-                src: "https://s5.ezgif.com/tmp/ezgif-5-fc9d0492fb.webp",
+                src: breville,
               },
               {
                 name: "جی پاس",
-                src: "https://s5.ezgif.com/tmp/ezgif-5-e19b2f1259.webp",
+                src: geepas,
               },
               {
                 name: "جیمیلای",
-                src: "https://s5.ezgif.com/tmp/ezgif-5-3add6644d4.webp",
+                src: gemilai,
               },
               {
-                name: "داونگی",
-                src: "https://s5.ezgif.com/tmp/ezgif-5-03b43c44c6.webp",
+                name: "دلونگی",
+                src: delonghi,
               },
               {
                 name: "فیلیپس",
-                src: "https://s5.ezgif.com/tmp/ezgif-5-d28387238a.webp",
+                src: philips,
               },
               {
                 name: "لواک",
-                src: "https://s5.ezgif.com/tmp/ezgif-5-5fac552d50.webp",
+                src: luwak,
               },
               {
                 name: "مباشی",
-                src: "https://s5.ezgif.com/tmp/ezgif-5-05c81e2f96.webp",
+                src: mebashi,
               },
               {
                 name: "نوا",
-                src: "https://s5.ezgif.com/tmp/ezgif-5-e4d5860979.webp",
+                src: uniqueLife,
               },
             ]}
           />
