@@ -110,7 +110,7 @@ const Header = () => {
                 <div className="my-6">
                   <FontAwesomeIcon className="h-12" icon={faCartShopping} />
                 </div>
-                <div>هیچ محصولی در سبد حرید نیست.</div>
+                <div>هیچ محصولی در سبد خرید نیست.</div>
               </div>
             </div>
           </div>
