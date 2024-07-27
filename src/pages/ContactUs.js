@@ -1,8 +1,11 @@
 import { faEnvelope, faMap, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import map from "../imgs/map.png";
+import { useState } from "react";
+import Loading from "../components/Loading";
 
 const ContactUs = () => {
+  const [IsLoading, setIsLoading] = useState(true);
   const handleSubmit = (event) => {
     event.preventDefault();
   };
@@ -10,7 +13,17 @@ const ContactUs = () => {
   return (
     <main>
       <div className="container">
-        <section className="md:flex w-11/12 h-fit shadow-md mx-auto mt-4 p-4">
+        {IsLoading && (
+          <div className="absolute inset-0 flex items-center justify-center">
+            <Loading />
+          </div>
+        )}
+        <section
+          className={`md:flex w-11/12 h-fit shadow-md mx-auto mt-4 p-4 duration-500 ${
+            IsLoading ? "opacity-0" : "opacity-100"
+          }`}
+          onLoad={() => setIsLoading(false)}
+        >
           <section>
             <div className=" h-fit border-2 border-slate-100 shadow-sm text-xs font-medium text-slate-600 p-2">
               <p>تماس با ما</p>

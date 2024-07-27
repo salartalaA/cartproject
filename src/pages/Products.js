@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../redux/products/action";
 import { Link } from "react-router-dom";
@@ -22,6 +22,29 @@ import philips from "../imgs/philips.png";
 import luwak from "../imgs/luwak.jpg";
 import mebashi from "../imgs/mebashi.jpg";
 import nova from "../imgs/nova.jpg";
+import Loading from "../components/Loading";
+
+const ImageItem = ({ src, alt }) => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  return (
+    <div className="relative">
+      {isLoading && (
+        <div className="absolute inset-0 flex items-center justify-center">
+          <Loading />
+        </div>
+      )}
+      <img
+        className={`transition-opacity duration-500 ${
+          isLoading ? "opacity-0" : "opacity-100"
+        }`}
+        src={src}
+        alt={alt}
+        onLoad={() => setIsLoading(false)}
+      />
+    </div>
+  );
+};
 
 const Products = () => {
   const { products } = useSelector((state) => state.product);
@@ -48,9 +71,7 @@ const Products = () => {
               key={index}
               className="max-w-24 border-2 border-slate-200 shadow-md p-2 rounded-xl"
             >
-              <div>
-                <img src={item.src} alt={item.name} />
-              </div>
+              <ImageItem src={item.src} alt={item.name} />
               {item.name}
             </div>
           ) : (
@@ -133,7 +154,7 @@ const Products = () => {
         </div>
 
         <div className="sm:mx-16 md:mx-8">
-          <img
+          <ImageItem
             className="mt-6 cursor-pointer bg-gray-50 shadow-md"
             src={product.image}
             alt={product.name}
