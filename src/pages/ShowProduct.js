@@ -440,8 +440,8 @@ const ShowProduct = () => {
   const selectedProductQty = cartItem ? cartItem.qty : 0;
 
   return (
-    <div className="container m-4">
-      <div className="lg:flex border-2 border-slate-100 shadow-md rounded-xl p-4">
+    <main className="container m-4">
+      <section className="lg:flex border-2 border-slate-100 shadow-md rounded-xl p-4">
         <div className="bg-white shadow-md w-full lg:w-96 h-96 py-4 lg:py-0 rounded-xl border-2 border-slate-100">
           <img className="w-full h-72" src={selectedProduct.image} alt="" />
           <div className="flex mt-8 gap-4 px-3 float-left">
@@ -468,9 +468,9 @@ const ShowProduct = () => {
               % ۱۰۰ عربیکا
             </span>
           </div>
-          <div className="text-xs my-8 font-semibold">
+          <p className="text-xs my-8 font-semibold">
             دسته : دان قهوه و پودرقهوه برچسب : عربیکا, {selectedProduct.name}
-          </div>
+          </p>
           <div className="text-xs font-semibold leading-6">
             {selectedProduct.name}
             <div>اسکرین ۱۷ دانه متوسط</div>
@@ -498,6 +498,7 @@ const ShowProduct = () => {
             <h2 className="font-bold my-2">آسیاب</h2>
             <div className="max-w-96">
               <select
+                id="selectBox"
                 className="border-2 border-slate-100 shadow-md p-2 rounded-lg cursor-pointer focus:outline-none"
                 value={selectedEqs}
                 onChange={handleEqsChange}
@@ -608,8 +609,8 @@ const ShowProduct = () => {
             </div>
           </div>
         </div>
-      </div>
-      <div className="flex flex-wrap py-6 justify-center gap-6 mx-auto text-white text-xs font-bold">
+      </section>
+      <section className="flex flex-wrap py-6 justify-center gap-6 mx-auto text-white text-xs font-bold">
         <div
           id="explain"
           onClick={handleExplain}
@@ -670,8 +671,8 @@ const ShowProduct = () => {
             <button>نقد و بررسی</button>
           </div>
         </div>
-      </div>
-      <div
+      </section>
+      <section
         id="box"
         className="w-full h-fit my-8 rounded-xl border-2 border-slate-100 shadow-md p-4"
       >
@@ -721,8 +722,8 @@ const ShowProduct = () => {
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 };
 

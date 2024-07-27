@@ -98,7 +98,7 @@ const ShoppingCart = () => {
   );
 
   const CartSummary = ({ cart }) => (
-    <div className="border-2 border-slate-200 shadow-md rounded-xl my-4 lg:my-0 lg:mx-4 w-full lg:w-1/4 h-fit p-3">
+    <section className="border-2 border-slate-200 shadow-md rounded-xl my-4 lg:my-0 lg:mx-4 w-full lg:w-1/4 h-fit p-3">
       <div className="text-xs mx-6 my-2">جمع کل سبد خرید</div>
       <div className="flex justify-between mx-2 text-xs my-6">
         <div>جمع جزء</div>
@@ -134,7 +134,7 @@ const ShoppingCart = () => {
           <button>پاکسازی سبد خرید</button>
         </div>
       </div>
-    </div>
+    </section>
   );
 
   const CartItem = ({ product, handleRemoveFromCart }) => (
@@ -215,7 +215,7 @@ const ShoppingCart = () => {
   );
 
   const CartItems = ({ cart }) => (
-    <div className="border-2 border-gray-100 shadow-md rounded-xl h-full p-6 lg:w-3/4 w-full">
+    <section className="border-2 border-gray-100 shadow-md rounded-xl h-full p-6 lg:w-3/4 w-full">
       <div className="border-2 border-gray-100 shadow-md rounded-xl">
         <div className="hidden lg:flex justify-between border-2 border-gray-100 shadow-md p-3 rounded-t-xl md:px-24 text-xs font-bold">
           <div>محصول</div>
@@ -238,6 +238,7 @@ const ShoppingCart = () => {
         <div className="w-full h-full border-2 border-slate-200 shadow-md rounded-xl">
           <div className="flex justify-between m-5 text-xs">
             <input
+              id="discountCode"
               className="focus:outline-none w-12 sm:w-fit"
               placeholder="کد تخفیف"
             />
@@ -247,11 +248,11 @@ const ShoppingCart = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 
   const CartHeader = () => (
-    <div className="flex justify-between mx-3 sm:mx-10 md:mx-12 lg:mx-44 text-center">
+    <section className="flex justify-between mx-3 sm:mx-10 md:mx-12 lg:mx-44 text-center">
       {[
         { icon: faCartShopping, label: "سبد خرید" },
         { icon: faBook, label: "جزئیات پرداخت" },
@@ -267,15 +268,15 @@ const ShoppingCart = () => {
           <span className="text-xs font-bold">{label}</span>
         </div>
       ))}
-    </div>
+    </section>
   );
 
   return (
-    <div className="container p-4">
+    <main className="container p-4">
       {cart.length === 0 ? (
         <EmptyCartMessage />
       ) : (
-        <div>
+        <section>
           <CartHeader />
           <div className="main-bg w-fit p-2 my-4 rounded-lg text-sm">
             <button>
@@ -285,13 +286,13 @@ const ShoppingCart = () => {
               </span>
             </button>
           </div>
-          <div className="lg:flex">
+          <section className="lg:flex">
             <CartItems cart={cart} />
             <CartSummary cart={cart} />
-          </div>
-        </div>
+          </section>
+        </section>
       )}
-    </div>
+    </main>
   );
 };
 

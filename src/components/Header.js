@@ -8,7 +8,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import { decrement, increment, removeFromCart } from "../redux/cart/action";
 
@@ -86,13 +86,13 @@ const Header = () => {
     cart_menu.classList.add("hidden");
   };
   return (
-    <div>
+    <header>
       <div
         id="cart-menu"
         className="hidden absolute w-80 h-full p-8 text-xs font-bold bg-white"
       >
         <div>
-          سبد خرید
+          <span>سبد خرید</span>
           <span className="p-1 bg-yellow-400 rounded-sm text-white mx-2">
             {cart.length}
           </span>
@@ -110,7 +110,7 @@ const Header = () => {
                 <div className="my-6">
                   <FontAwesomeIcon className="h-12" icon={faCartShopping} />
                 </div>
-                <div>هیچ محصولی در سبد خرید نیست.</div>
+                <p>هیچ محصولی در سبد خرید نیست.</p>
               </div>
             </div>
           </div>
@@ -193,7 +193,7 @@ const Header = () => {
           </div>
         )}
       </div>
-      <div className="hidden md:block bg-footer h-fit p-6 text-white text-2xl">
+      <section className="hidden md:block bg-footer h-fit p-6 text-white text-2xl">
         <div className="container">
           <div>
             <p className="newFont">
@@ -202,25 +202,27 @@ const Header = () => {
             </p>
           </div>
         </div>
-      </div>
+      </section>
       <div className="bg-gray-50 w-full h-auto text-sm font-semibold shadow-lg">
         <div className="container px-6">
           <div className="hidden md:block">
-            <div className="block md:flex">
-              <Link to="/cartproject" className="cursor-pointer mx-4">
-                <img
-                  className="mx-auto md:mx-0"
-                  src="https://28coffee.ir/wp-content/uploads/elementor/thumbs/blog_28coffee-q2cg3yae8o1pfp48m6lk8fq5nuy1qivoakg4tzyrxk.webp"
-                  alt=""
-                />
-              </Link>
-              <div className="m-auto">
+            <section className="block md:flex">
+              <section>
+                <Link to="/cartproject" className="cursor-pointer mx-4">
+                  <img
+                    className="mx-auto md:mx-0"
+                    src="https://28coffee.ir/wp-content/uploads/elementor/thumbs/blog_28coffee-q2cg3yae8o1pfp48m6lk8fq5nuy1qivoakg4tzyrxk.webp"
+                    alt=""
+                  />
+                </Link>
+              </section>
+              <section className="m-auto">
                 <div className="md:mt-10 md:mx-0 mx-auto max-w-96 lg:w-96 bg-white shadow-md flex rounded-md">
                   <div className="m-2">
                     <FontAwesomeIcon icon={faMagnifyingGlass} />
                   </div>
                   <input
-                    id="search-bar"
+                    id="search-bar-pc"
                     className="max-w-fit p-2 focus:outline-none"
                     placeholder="کلید واژه ی مورد نظر..."
                   />
@@ -272,8 +274,8 @@ const Header = () => {
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className="flex space-x-4 space-x-reverse justify-between mt-6 md:mt-16">
+              </section>
+              <section className="flex space-x-4 space-x-reverse justify-between mt-6 md:mt-16">
                 <div className="flex gap-2 mx-3 md:mx-0">
                   <div>
                     <FontAwesomeIcon icon={faUser} />
@@ -292,29 +294,37 @@ const Header = () => {
                     </span>
                   </button>
                 </div>
-              </div>
-            </div>
-            <div className="pt-6 md:py-3 md:pt-10 flex justify-between text-xs font-bold">
-              <div className="hidden lg:flex space-x-4 space-x-reverse">
-                <div>
-                  <NavLink to="/cartproject">خانه</NavLink>
-                </div>
-                <div>
-                  <NavLink to="/products">فروشگاه</NavLink>
-                </div>
-                <div>
-                  <div>لیست قیمت محصولات</div>
-                </div>
-                <div>
-                  <div>وبلاگ</div>
-                </div>
-                <div>
-                  <div>آموزش</div>
-                </div>
-                <div>
-                  <div>تماس با ما</div>
-                </div>
-              </div>
+              </section>
+            </section>
+            <section className="pt-6 md:py-3 md:pt-10 flex justify-between text-xs font-bold">
+              <nav className="hidden lg:flex space-x-4 space-x-reverse">
+                <ul>
+                  <li>
+                    <Link to="/cartproject">خانه</Link>
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                    <Link to="/products">فروشگاه</Link>
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                    <Link to="/products">لیست قیمت محصولات</Link>
+                  </li>
+                </ul>
+                <ul>
+                  <li>وبلاگ</li>
+                </ul>
+                <ul>
+                  <li>آموزش</li>
+                </ul>
+                <ul>
+                  <li>
+                    <Link to="/contact-us">تماس با ما</Link>
+                  </li>
+                </ul>
+              </nav>
               <div className="lg:hidden flex gap-2">
                 <div onClick={() => handleMobileMenu()} className="hamburger">
                   <div className="bar"></div>
@@ -322,13 +332,13 @@ const Header = () => {
                 <span className="my-auto">فهرست</span>
               </div>
 
-              <div className="flex space-x-4 space-x-reverse text-sm">
+              <section className="flex space-x-4 space-x-reverse text-sm">
                 <div className="my-auto">۰۹۱۶۹۷۷۸۰۰۶</div>
                 <div className="cursor-pointer my-auto">
                   <FontAwesomeIcon icon={faPhoneVolume} />
                 </div>
-              </div>
-            </div>
+              </section>
+            </section>
           </div>
           <div className="mobile-nav transition-all rounded-2xl">
             <div>
@@ -373,10 +383,19 @@ const Header = () => {
               </div>
               <hr />
               <div className="hover:text-sky-600 text-xs font-bold">وبلاگ</div>
+              <hr />
+              <div>
+                <Link
+                  to="/contact-us"
+                  className="hover:text-sky-600 mt-12 text-xs font-bold"
+                >
+                  تماس با ما
+                </Link>
+              </div>
             </div>
           </div>
-          <div className="md:hidden p-2">
-            <div className="flex gap-2">
+          <section className="md:hidden p-2">
+            <section className="flex gap-2">
               <div onClick={() => handleMobileMenu()} className="hamburger">
                 <div className="bar"></div>
               </div>
@@ -411,14 +430,14 @@ const Header = () => {
                   </svg>
                 </div>
               </div>
-            </div>
-            <div className="flex gap-4">
+            </section>
+            <section className="flex gap-4">
               <div className="mt-4 bg-white shadow-md w-full flex rounded-md md:hidden">
                 <div className="m-2">
                   <FontAwesomeIcon icon={faMagnifyingGlass} />
                 </div>
                 <input
-                  id="search-bar"
+                  id="search-bar-phone"
                   className="p-2 focus:outline-none"
                   placeholder="کلید واژه ی مورد نظر..."
                 />
@@ -470,11 +489,11 @@ const Header = () => {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
+            </section>
+          </section>
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 export default Header;

@@ -9,30 +9,33 @@ const Footer = () => {
   return (
     <footer className="w-full h-fit bg-footer mt-4 text-sm font-semilight leading-6">
       <div className="container pt-4 grid grid-cols-1 text-center md:text-start sm:grid-cols-3 md:grid-cols-4 text-white px-6 gap-6">
-        {/* Quick Links */}
         <div className="mx-auto md:mx-0">
           <h4 className="text-yellow-300 mb-4">دسترسی سریع</h4>
           <ul className="space-y-2">
             <li className="cursor-pointer w-fit mx-auto md:mx-0">تماس با ما</li>
             <li className="cursor-pointer w-fit mx-auto md:mx-0">وبلاگ</li>
             <li className="cursor-pointer w-fit mx-auto md:mx-0">شورتکد</li>
-            <li className="cursor-pointer w-fit mx-auto md:mx-0">پیگیری سفارش</li>
+            <li className="cursor-pointer w-fit mx-auto md:mx-0">
+              پیگیری سفارش
+            </li>
             <li className="cursor-pointer w-fit mx-auto md:mx-0">فروشگاه</li>
           </ul>
         </div>
 
-        {/* Customer Services */}
         <div className="mx-auto md:mx-0">
           <h4 className="text-yellow-300 mb-4">خدمات مشتریان</h4>
           <ul className="space-y-2">
-            <li className="cursor-pointer w-fit mx-auto md:mx-0">سوالات متداول</li>
-            <li className="cursor-pointer w-fit mx-auto md:mx-0">رویه بازگردانی کالا</li>
+            <li className="cursor-pointer w-fit mx-auto md:mx-0">
+              سوالات متداول
+            </li>
+            <li className="cursor-pointer w-fit mx-auto md:mx-0">
+              رویه بازگردانی کالا
+            </li>
             <li className="cursor-pointer w-fit mx-auto md:mx-0">حریم خصوصی</li>
             <li className="cursor-pointer w-fit mx-auto md:mx-0">تماس با ما</li>
           </ul>
         </div>
 
-        {/* About 28 Coffee */}
         <div>
           <h4 className="text-yellow-300 mb-4">درباره قهوه 28</h4>
           <p>
@@ -44,7 +47,6 @@ const Footer = () => {
           </p>
         </div>
 
-        {/* Contact Information */}
         <div>
           <h4 className="text-yellow-300 mb-4">تماس با ما</h4>
           <p className="mb-2">
@@ -67,12 +69,10 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Divider */}
       <div className="my-4">
         <hr />
       </div>
 
-      {/* Copyright */}
       <div className="text-center text-white p-4">
         کلیه حقوق مادی و معنوی برای این سایت محفوظ می باشد و هرگونه کپی برداری
         شامل پیگرد قانونی می باشد.

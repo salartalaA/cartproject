@@ -21,7 +21,7 @@ import delonghi from "../imgs/delonghi.jpg";
 import philips from "../imgs/philips.png";
 import luwak from "../imgs/luwak.jpg";
 import mebashi from "../imgs/mebashi.jpg";
-import uniqueLife from "../imgs/unique-life.jpg";
+import nova from "../imgs/nova.jpg";
 
 const Products = () => {
   const { products } = useSelector((state) => state.product);
@@ -93,7 +93,7 @@ const Products = () => {
       <div className="mx-2">
         {["۵۱", "۵۲", "۵۸"].map((size, index) => (
           <div key={index} className="flex gap-2 p-1">
-            <input className="cursor-pointer" type="checkbox" />
+            <input name={size} className="cursor-pointer" type="checkbox" />
             <label>{size}</label>
           </div>
         ))}
@@ -172,7 +172,7 @@ const Products = () => {
   };
 
   return (
-    <div className="container">
+    <main className="container">
       <div
         onClick={handleOpenCloseFilterMenu}
         className="bottom-6 left-6 sticky md:hidden border-2 border-yellow-600 text-amber-400 p-2 rounded-lg bg-white shadow-md"
@@ -182,8 +182,8 @@ const Products = () => {
       <div className="mx-12 mt-4 text-xs font-semilight bg-gray-50 w-auto p-2 rounded-lg">
         <Link to="/cartproject">خانه</Link> / فروشگاه
       </div>
-      <div className="md:flex mx-10 mt-4">
-        <div className="sm:w-96 hidden md:block">
+      <section className="md:flex mx-10 mt-4">
+        <section className="sm:w-96 hidden md:block">
           <FilterList
             title="دسته های محصولات"
             items={[
@@ -242,15 +242,15 @@ const Products = () => {
               },
               {
                 name: "نوا",
-                src: uniqueLife,
+                src: nova,
               },
             ]}
           />
           <ColorFilter />
           <SizeFilter />
           <RatingFilter />
-        </div>
-        <div className="sm:mx-12">
+        </section>
+        <section className="sm:mx-12">
           <div className="flex gap-2 mt-10 md:mt-0">
             <span>
               <FontAwesomeIcon icon={faStore} />
@@ -267,8 +267,8 @@ const Products = () => {
               <div>Loading...</div>
             )}
           </div>
-        </div>
-        <div
+        </section>
+        <section
           id="filter-menu"
           className="absolute w-3/4 top-0 bg-white z-[100] right-0 p-4 rounded-lg hidden shadow-md"
         >
@@ -336,16 +336,16 @@ const Products = () => {
               },
               {
                 name: "نوا",
-                src: uniqueLife,
+                src: nova,
               },
             ]}
           />
           <ColorFilter />
           <SizeFilter />
           <RatingFilter />
-        </div>
-      </div>
-    </div>
+        </section>
+      </section>
+    </main>
   );
 };
 

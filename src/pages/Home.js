@@ -1,115 +1,33 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import {
-  faArrowsLeftRight,
-  faCartShopping,
-  faHeart,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import life from "../imgs/life.jpg";
 import espresso from "../imgs/espresso maker.webp";
 import instagram from "../imgs/instagram.webp";
 import tiva from "../imgs/tiva.jpg";
 import telegram from "../imgs/telegram.png";
 import moka from "../imgs/moka.jpg";
-
-const ImageItem = ({ src, alt }) => {
-  const [isHovering, setIsHovering] = useState(false);
-
-  return (
-    <motion.div
-      className="sm:w-full md:w-fit mx-2 md:my-3 mb-3"
-      onMouseEnter={() => setIsHovering(true)}
-      onMouseLeave={() => setIsHovering(false)}
-      animate={
-        isHovering
-          ? {
-              y: [0, -10, 10, 0],
-              transition: {
-                y: {
-                  duration: 1,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                },
-              },
-            }
-          : { y: 0 }
-      }
-    >
-      <img className="rounded-lg cursor-pointer" src={src} alt={alt} />
-    </motion.div>
-  );
-};
-
-const ProductCard = ({ src, price, description }) => (
-  <div className="shadow-md w-72 h-auto rounded-lg leading-8">
-    <div className="mx-3 mt-2 float-right bg-red-600 p-0.5 rounded-full text-white">
-      <span>%10</span>
-    </div>
-    <div className="float-left p-1 text-xs font-bold bg-yellow-400 w-fit text-white rounded-s-full m-3 rounded-tl-full">
-      <span>فروش ویژه</span>
-    </div>
-    <div className="px-12 pt-6">
-      <img className="cursor-pointer" src={src} alt={description} />
-    </div>
-    <div className="m-2">
-      <span className="main-text">{price}</span> تومان
-      <div>{description}</div>
-      <div className="flex gap-2 lg:mt-4">
-        <div className="cursor-pointer border-2 border-black w-8 h-8 text-center rounded-full">
-          <FontAwesomeIcon icon={faCartShopping} />
-        </div>
-        <div className="cursor-pointer border-2 border-black w-8 h-8 text-center rounded-full">
-          <FontAwesomeIcon icon={faArrowsLeftRight} />
-        </div>
-        <div className="cursor-pointer border-2 border-black w-8 h-8 text-center rounded-full">
-          <FontAwesomeIcon icon={faHeart} />
-        </div>
-      </div>
-    </div>
-  </div>
-);
-
-const BlogCard = ({ src, title }) => (
-  <div className="w-72 h-80 shadow-md m-4 rounded-lg flex-shrink-0">
-    <div className="p-2 text-xs m-2 float-left main-bg w-fit text-white rounded-b-xl rounded-tr-xl">
-      وبلاگ
-    </div>
-    <div className="w-full cursor-pointer my-10 mx-4">
-      <img src={src} alt={title} />
-    </div>
-    <div className="my-12 mx-4">{title}</div>
-    <div className="text-xs bg-yellow-300 w-fit p-3 float-left m-2 rounded-bl-full hover:rounded-t-full hover:bg-yellow-400 hover:text-white transition-all cursor-pointer">
-      بزن بریم!
-    </div>
-  </div>
-);
-
-const NewProductCard = ({ src, price, description }) => (
-  <div className="w-full h-24 shadow-md rounded-md flex">
-    <div className="w-24 p-3 mr-4 cursor-pointer">
-      <img className="rounded-md" src={src} alt={description} />
-    </div>
-    <div className="m-4">
-      {description}
-      <div className="my-2">
-        <span className="main-text text-sm">{price}</span> تومان
-      </div>
-    </div>
-  </div>
-);
+import ImageItem from "../components/ImageItem";
+import ProductCard from "../components/ProductCard";
+import BlogCard from "../components/BlogCard";
+import NewProductCard from "../components/NewProductCard";
 
 const Home = () => {
   const [isHovering, setIsHovering] = useState(false);
   const blogSrc = "https://28coffee.ir/wp-content/uploads/2023/02/113.65.svg";
+
   return (
-    <div className="container">
+    <main className="container">
       <div>
-        <div className="block md:grid md:grid-cols-3">
+        <section className="block md:grid md:grid-cols-3">
           {[...Array(12)].map((_, index) => (
-            <ImageItem key={index} src={espresso} alt={`image-${index}`} />
+            <ImageItem
+              key={index}
+              src={espresso}
+              alt={`image-${index}`}
+              className="sm:w-full md:w-fit mx-2 md:my-3 mb-3"
+            />
           ))}
-        </div>
+        </section>
         <motion.div
           className="w-full px-6 md:w-1/2 mx-auto cursor-pointer"
           onMouseEnter={() => setIsHovering(true)}
@@ -129,16 +47,17 @@ const Home = () => {
               : { y: 0 }
           }
         >
-          <img src={instagram} alt="Instagram Banner" />
+          <ImageItem src={instagram} alt="Instagram Banner" />
         </motion.div>
-        <div className="my-12">
+        <section className="my-12">
           <div className="m-3 pb-4 flex justify-between">
-            <div className="text-xs font-bold">آسیاب قهوه</div>
+            <h4 className="text-xs font-bold">آسیاب قهوه</h4>
             <div className="flex text-xs font-bold">
               <div className="w-4 h-4 main-bg rounded-full"></div>
               <span>مشاهده همه</span>
             </div>
           </div>
+
           <div className="text-xs font-bold mx-4 overflow-x-auto">
             <div className="flex lg:space-x-4 lg:space-x-reverse gap-4 lg:gap-0 min-w-fit mb-4 md:mb-4">
               {[...Array(5)].map((_, index) => (
@@ -151,11 +70,11 @@ const Home = () => {
               ))}
             </div>
           </div>
-        </div>
+        </section>
         <hr />
-        <div className="my-12">
+        <section className="my-12">
           <div className="m-3 pb-4 flex justify-between">
-            <div className="text-xs font-bold">اسپرسوساز</div>
+            <h4 className="text-xs font-bold">اسپرسوساز</h4>
             <div className="flex text-xs font-bold">
               <div className="w-4 h-4 main-bg rounded-full"></div>
               <span>مشاهده همه</span>
@@ -173,7 +92,7 @@ const Home = () => {
               ))}
             </div>
           </div>
-        </div>
+        </section>
         <motion.div
           className="w-full px-6 md:w-1/2 mx-auto cursor-pointer"
           onMouseEnter={() => setIsHovering(true)}
@@ -193,28 +112,30 @@ const Home = () => {
               : { y: 0 }
           }
         >
-          <img src={telegram} alt="Telegram Banner" />
+          <ImageItem src={telegram} alt="Telegram Banner" />
         </motion.div>
 
-        <div className="m-6 flex justify-between">
-          <div className="text-xs font-bold">جدیدترین محصولات</div>
-          <div className="flex text-xs font-bold">
-            <div className="w-4 h-4 main-bg rounded-full"></div>
-            <span>مشاهده همه</span>
+        <section>
+          <div className="m-6 flex justify-between">
+            <h4 className="text-xs font-bold">جدیدترین محصولات</h4>
+            <div className="flex text-xs font-bold">
+              <div className="w-4 h-4 main-bg rounded-full"></div>
+              <span>مشاهده همه</span>
+            </div>
           </div>
-        </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mx-4 text-xs font-bold">
+            {[...Array(6)].map((_, index) => (
+              <NewProductCard
+                key={index}
+                src={moka}
+                price="۴۹۰۰۰۰"
+                description="موکاپات فانتزی"
+              />
+            ))}
+          </div>
+        </section>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mx-4 text-xs font-bold">
-          {[...Array(6)].map((_, index) => (
-            <NewProductCard
-              key={index}
-              src={moka}
-              price="۴۹۰۰۰۰"
-              description="موکاپات فانتزی"
-            />
-          ))}
-        </div>
-        <div className="m-3 my-6 w-fit">
+        <section className="m-3 my-6 w-fit">
           <h2 className="font-bold text-xl">خرید قهوه از قهوه 28</h2>
           <p className="text-lg my-4 font-semibold">
             خرید انواع قهوه ها | قهوه اسپرسو | قهوه ترک | قهوه فوری | دانه قهوه
@@ -226,46 +147,47 @@ const Home = () => {
             تازه آسیاب می کنیم و قهوه هایی که از برندها و به صورت بسته بندی
             خریداری می شود.
           </p>
-        </div>
+        </section>
 
-        <div className="m-3 pt-4 md:pt-0 flex justify-between">
-          <div className="text-sm font-bold">وبلاگ</div>
-          <div className="flex text-xs font-bold">
-            <div className="w-4 h-4 main-bg rounded-full"></div>
-            <span>مشاهده همه</span>
+        <section>
+          <div className="m-3 pt-4 md:pt-0 flex justify-between">
+            <div className="text-sm font-bold">وبلاگ</div>
+            <div className="flex text-xs font-bold">
+              <div className="w-4 h-4 main-bg rounded-full"></div>
+              <span>مشاهده همه</span>
+            </div>
           </div>
-        </div>
-
-        <div className="flex overflow-x-auto text-xs font-semibold">
-          {[...Array(4)].map((_, index) => (
-            <BlogCard key={index} src={blogSrc} title="تاثیر قهوه بر پوست" />
-          ))}
-        </div>
+          <div className="flex overflow-x-auto text-xs font-semibold">
+            {[...Array(4)].map((_, index) => (
+              <BlogCard key={index} src={blogSrc} title="تاثیر قهوه بر پوست" />
+            ))}
+          </div>
+        </section>
       </div>
-      <div className="sm:grid hidden sm:grid-cols-2 md:grid-cols-5 gap-4 leading-8 mt-10 mx-3">
+      <section className="sm:grid hidden sm:grid-cols-2 md:grid-cols-5 gap-4 leading-8 mt-10 mx-3">
         <div>
-          <div className="text-sm font-bold leading-8">تحویل اکسپرس</div>
-          <div className="text-xs">ارسال به سراسر کشور</div>
+          <h4 className="text-sm font-bold leading-8">تحویل اکسپرس</h4>
+          <p className="text-xs">ارسال به سراسر کشور</p>
         </div>
         <div>
-          <div className="text-sm font-bold leading-8">پرداخت در محل </div>
-          <div className="text-xs"> تضمین امنیت خرید</div>
+          <h4 className="text-sm font-bold leading-8">پرداخت در محل </h4>
+          <p className="text-xs"> تضمین امنیت خرید</p>
         </div>
         <div>
-          <div className="text-sm font-bold leading-8">تضمین قیمت </div>
-          <div className="text-xs"> تضمین بهترین قیمت </div>
+          <h4 className="text-sm font-bold leading-8">تضمین قیمت </h4>
+          <p className="text-xs"> تضمین بهترین قیمت </p>
         </div>
         <div>
-          <div className="text-sm font-bold leading-8">ارسال به تمام نقاط </div>
-          <div className="text-xs">ارسال به تمام نقاط کشور </div>
+          <h4 className="text-sm font-bold leading-8">ارسال به تمام نقاط </h4>
+          <p className="text-xs">ارسال به تمام نقاط کشور </p>
         </div>
         <div>
-          <div className="text-sm font-bold leading-8">ضمانت بازگشت </div>
-          <div className="text-xs">7 روز ضمانت بازگشت کالا</div>
+          <h4 className="text-sm font-bold leading-8">ضمانت بازگشت </h4>
+          <p className="text-xs">7 روز ضمانت بازگشت کالا</p>
         </div>
-      </div>
-      <div className="w-full h-1 bg-footer my-12"></div>
-      <div className="mx-4">
+      </section>
+      <hr className="w-full h-1 bg-footer my-12" />
+      <section className="mx-4">
         <div className="max-w-24 my-4">
           <img
             src="https://28coffee.ir/wp-content/uploads/2023/02/113.65.svg"
@@ -279,9 +201,9 @@ const Home = () => {
           <span className="text-red-500 font-semibold">۲۴ ساعته </span>
           پاسخگوی شما هستیم
         </p>
-      </div>
-      <div className="w-full h-1 bg-footer my-12"></div>
-    </div>
+      </section>
+      <hr className="w-full h-1 bg-footer my-12" />
+    </main>
   );
 };
 
