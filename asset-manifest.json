@@ -1,16 +1,23 @@
 {
   "files": {
-    "main.css": "/cartproject/static/css/main.13f2b14e.css",
-    "main.js": "/cartproject/static/js/main.5c17287c.js",
+    "main.css": "/cartproject/static/css/main.0d9cd5e7.css",
+    "main.js": "/cartproject/static/js/main.e02b2b8e.js",
+    "static/js/898.43593b6e.chunk.js": "/cartproject/static/js/898.43593b6e.chunk.js",
+    "static/js/672.dbb7f79b.chunk.js": "/cartproject/static/js/672.dbb7f79b.chunk.js",
+    "static/js/900.ddf73ac7.chunk.js": "/cartproject/static/js/900.ddf73ac7.chunk.js",
     "static/media/telegram.png": "/cartproject/static/media/telegram.db851d623a3b202f6e79.png",
     "static/media/espresso maker.webp": "/cartproject/static/media/espresso maker.51191179495b6b75731c.webp",
+    "static/media/map.png": "/cartproject/static/media/map.85ea594a4f0de2d1a319.png",
     "static/media/instagram.webp": "/cartproject/static/media/instagram.393042e05c1ed69bfe02.webp",
     "index.html": "/cartproject/index.html",
-    "main.13f2b14e.css.map": "/cartproject/static/css/main.13f2b14e.css.map",
-    "main.5c17287c.js.map": "/cartproject/static/js/main.5c17287c.js.map"
+    "main.0d9cd5e7.css.map": "/cartproject/static/css/main.0d9cd5e7.css.map",
+    "main.e02b2b8e.js.map": "/cartproject/static/js/main.e02b2b8e.js.map",
+    "898.43593b6e.chunk.js.map": "/cartproject/static/js/898.43593b6e.chunk.js.map",
+    "672.dbb7f79b.chunk.js.map": "/cartproject/static/js/672.dbb7f79b.chunk.js.map",
+    "900.ddf73ac7.chunk.js.map": "/cartproject/static/js/900.ddf73ac7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.13f2b14e.css",
-    "static/js/main.5c17287c.js"
+    "static/css/main.0d9cd5e7.css",
+    "static/js/main.e02b2b8e.js"
   ]
 }
