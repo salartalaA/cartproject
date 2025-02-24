@@ -37,6 +37,6 @@ npm run dev
 
 ```
 
-After that, project will start at localhost:3000 on your browser!
+So! The project will start at localhost:3000 on your browser!
 
 Enjoy and feel free :]
