@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getProducts } from "../redux/products/action";
-import { Link } from "react-router-dom";
+import { getProducts, setFilter } from "../redux/products/action";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowsLeftRight,
@@ -22,37 +21,25 @@ import philips from "../imgs/philips.png";
 import luwak from "../imgs/luwak.jpg";
 import mebashi from "../imgs/mebashi.jpg";
 import nova from "../imgs/nova.jpg";
-import Loading from "../components/Loading";
-
-const ImageItem = ({ src, alt }) => {
-  const [isLoading, setIsLoading] = useState(true);
-
-  return (
-    <div className="relative">
-      {isLoading && (
-        <div className="absolute inset-0 flex items-center justify-center">
-          <Loading />
-        </div>
-      )}
-      <img
-        className={`transition-opacity duration-500 ${
-          isLoading ? "opacity-0" : "opacity-100"
-        }`}
-        src={src}
-        alt={alt}
-        onLoad={() => setIsLoading(false)}
-      />
-    </div>
-  );
-};
 
 const Products = () => {
   const { products } = useSelector((state) => state.product);
+  const filter = useSelector((state) => state.product.filter);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getProducts());
   }, [dispatch]);
+
+  const filteredProducts = useMemo(() => {
+    return products.filter((product) =>
+      filter ? product.color === filter : true
+    );
+  }, [products, filter]);
+
+  useEffect(() => {
+    console.log(products, filter);
+  }, [products, filter]);
 
   const FilterList = ({ title, items }) => (
     <div className="border-2 border-slate-200 shadow-md h-auto w-full mt-10 rounded-xl text-xs p-3 font-semibold">
@@ -71,7 +58,9 @@ const Products = () => {
               key={index}
               className="max-w-24 border-2 border-slate-200 shadow-md p-2 rounded-xl"
             >
-              <ImageItem src={item.src} alt={item.name} />
+              <div>
+                <img src={item.src} alt={item.name} />
+              </div>
               {item.name}
             </div>
           ) : (
@@ -84,26 +73,41 @@ const Products = () => {
 
   const ColorFilter = () => (
     <div className="border-2 border-slate-200 shadow-md h-auto w-full mt-10 rounded-xl text-xs p-3 font-semibold">
-      <div>فیلتر بر اساس رنگ</div>
+      <div onClick={() => dispatch(setFilter(null))}>فیلتر بر اساس رنگ</div>
       <hr className="my-4" />
-      <div className="flex flex-wrap gap-1 mx-2">
+      <div
+        className="flex flex-wrap gap-1 mx-2"
+        onClick={handleCloseFilterMenu}
+      >
         {[
-          "bg-blue-600",
-          "bg-green-500",
-          "bg-white",
-          "bg-yellow-400",
-          "bg-red-600",
-          "bg-stone-500",
-          "bg-gray-300",
-        ].map((color, index) => (
+          { color: "blue", class: "bg-blue-600" },
+          { color: "green", class: "bg-green-500" },
+          { color: "white", class: "bg-white" },
+          { color: "yellow", class: "bg-yellow-400" },
+          { color: "red", class: "bg-red-600" },
+          { color: "stone", class: "bg-stone-500" },
+          { color: "gray", class: "bg-gray-300" },
+        ].map(({ color, class: colorClass }, index) => (
           <div
             key={index}
             className="border-2 border-slate-100 p-1 w-fit rounded-lg cursor-pointer"
           >
-            <div className={`w-6 h-6 ${color} shadow-md rounded-full`}></div>
+            <div
+              className={`w-6 h-6 ${colorClass} shadow-md rounded-full`}
+              onClick={() => dispatch(setFilter(color))}
+            ></div>
           </div>
         ))}
       </div>
+
+      {filter && (
+        <button
+          onClick={() => dispatch(setFilter(null))}
+          className="mt-4 w-full py-2 text-white bg-red-500 rounded-lg"
+        >
+          حذف فیلتر
+        </button>
+      )}
     </div>
   );
 
@@ -114,7 +118,7 @@ const Products = () => {
       <div className="mx-2">
         {["۵۱", "۵۲", "۵۸"].map((size, index) => (
           <div key={index} className="flex gap-2 p-1">
-            <input name={size} className="cursor-pointer" type="checkbox" />
+            <input className="cursor-pointer" type="checkbox" />
             <label>{size}</label>
           </div>
         ))}
@@ -123,7 +127,7 @@ const Products = () => {
   );
 
   const RatingFilter = () => (
-    <div className="border-2 border-slate-200 shadow-md h-auto w-full mt-10 rounded-xl text-xs p-3 font-semibold">
+    <div className="border-2 border-slate-200 shadow-md h-auto w-full my-10 rounded-xl text-xs p-3 font-semibold">
       <div>میانگین رتبه</div>
       <hr className="my-4" />
       <div className="mx-2 p-1">
@@ -148,13 +152,13 @@ const Products = () => {
 
   const ProductCard = React.memo(({ product }) => (
     <div className="border-2 border-slate-200 shadow-md w-full sm:w-fit rounded-lg">
-      <Link to={`/products/${product.id}`}>
+      <a href={`/products/${product.id}`}>
         <div className="float-left p-1 text-xs font-bold bg-yellow-400 w-fit text-white rounded-s-full m-2 rounded-tl-full">
           <span>فروش ویژه</span>
         </div>
 
         <div className="sm:mx-16 md:mx-8">
-          <ImageItem
+          <img
             className="mt-6 cursor-pointer bg-gray-50 shadow-md"
             src={product.image}
             alt={product.name}
@@ -177,8 +181,13 @@ const Products = () => {
               <FontAwesomeIcon icon={faHeart} />
             </div>
           </div>
+          <div className="mt-2 text-xs">
+            <span>رنگ:</span>
+            {"  "}
+            <span>{product.faColor}</span>
+          </div>
         </div>
-      </Link>
+      </a>
     </div>
   ));
 
@@ -201,10 +210,10 @@ const Products = () => {
         <FontAwesomeIcon icon={faFilter} />
       </div>
       <div className="mx-12 mt-4 text-xs font-semilight bg-gray-50 w-auto p-2 rounded-lg">
-        <Link to="/cartproject">خانه</Link> / فروشگاه
+        <a href="/">خانه</a> / فروشگاه
       </div>
-      <section className="md:flex mx-10 mt-4">
-        <section className="sm:w-96 hidden md:block">
+      <div className="md:flex mx-10 mt-4">
+        <div className="sm:w-96 hidden md:block">
           <FilterList
             title="دسته های محصولات"
             items={[
@@ -270,8 +279,8 @@ const Products = () => {
           <ColorFilter />
           <SizeFilter />
           <RatingFilter />
-        </section>
-        <section className="sm:mx-12">
+        </div>
+        <div className="sm:mx-12">
           <div className="flex gap-2 mt-10 md:mt-0">
             <span>
               <FontAwesomeIcon icon={faStore} />
@@ -280,16 +289,16 @@ const Products = () => {
             <div className="bg-black h-1 w-full my-4"></div>
           </div>
           <div className="grid lg:grid-cols-4 grid-cols-2 gap-4 my-6">
-            {products ? (
-              products.map((product) => (
+            {filteredProducts ? (
+              filteredProducts.map((product) => (
                 <ProductCard key={product.id} product={product} />
               ))
             ) : (
               <div>Loading...</div>
             )}
           </div>
-        </section>
-        <section
+        </div>
+        <div
           id="filter-menu"
           className="absolute w-3/4 top-0 bg-white z-[100] right-0 p-4 rounded-lg hidden shadow-md"
         >
@@ -364,8 +373,8 @@ const Products = () => {
           <ColorFilter />
           <SizeFilter />
           <RatingFilter />
-        </section>
-      </section>
+        </div>
+      </div>
     </main>
   );
 };
