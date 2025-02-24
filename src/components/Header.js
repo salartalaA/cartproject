@@ -239,7 +239,7 @@ const Header = () => {
                         تمام دسته ها
                       </div>
                       <div className="w-36 h-auto bg-white hover:text-amber-600 pr-2">
-                        اسباب قهوه
+                        آسیاب قهوه
                       </div>
                       <div className="w-36 h-auto bg-white hover:text-amber-600 pr-2">
                         اسپرسوسازها
@@ -455,7 +455,7 @@ const Header = () => {
                     تمام دسته ها
                   </div>
                   <div className="w-36 h-auto bg-white text-black hover:text-amber-600 pr-2">
-                    اسباب قهوه
+                    آسیاب قهوه
                   </div>
                   <div className="w-36 h-auto bg-white text-black hover:text-amber-600 pr-2">
                     اسپرسوسازها
