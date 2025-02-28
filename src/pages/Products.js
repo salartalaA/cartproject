@@ -21,6 +21,7 @@ import philips from "../imgs/philips.png";
 import luwak from "../imgs/luwak.jpg";
 import mebashi from "../imgs/mebashi.jpg";
 import nova from "../imgs/nova.jpg";
+import { Link } from "react-router-dom";
 
 const Products = () => {
   const { products } = useSelector((state) => state.product);
@@ -152,7 +153,7 @@ const Products = () => {
 
   const ProductCard = React.memo(({ product }) => (
     <div className="border-2 border-slate-200 shadow-md w-full sm:w-fit rounded-lg">
-      <a href={`/products/${product.id}`}>
+      <Link to={`/products/${product.id}`}>
         <div className="float-left p-1 text-xs font-bold bg-yellow-400 w-fit text-white rounded-s-full m-2 rounded-tl-full">
           <span>فروش ویژه</span>
         </div>
@@ -187,7 +188,7 @@ const Products = () => {
             <span>{product.faColor}</span>
           </div>
         </div>
-      </a>
+      </Link>
     </div>
   ));
 
